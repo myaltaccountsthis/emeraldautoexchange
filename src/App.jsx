@@ -29,11 +29,11 @@ class App extends React.Component {
       <div className="App">
         <header>
           <div className="App-Nav">
-            <NavButton name="Home" content={<img src="./logo.png" alt="Emerald Auto" />} onClick={this.handleOnClick("Home")} />
+            <NavButton content={<img src="./logo.png" alt="Emerald Auto" />} onClick={this.handleOnClick("Home")} />
             <div style={{flexGrow: 10}} />
             {
               (() => { // create NavButtons using object and insert NavDividers in between
-                let arr = Object.keys(this.navInfo).slice(1).map(key => <NavButton name={key} key={key} content={this.navInfo[key].title} onClick={this.handleOnClick(key)} />).reduce((r, a) => r.concat(a, <NavDivider />), []);
+                let arr = Object.keys(this.navInfo).slice(1).map(key => <NavButton key={key} content={this.navInfo[key].title} onClick={this.handleOnClick(key)} />).reduce((r, a) => r.concat(a, <NavDivider />), []);
                 arr.pop();
                 return arr;
               })()
