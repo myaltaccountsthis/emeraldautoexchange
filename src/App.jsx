@@ -2,6 +2,9 @@ import React from 'react';
 import './App.css';
 import NavButton from './NavButton';
 import NavDivider from './NavDivider';
+import Contact from './Pages/Contact';
+import Home from './Pages/Home';
+import Listings from './Pages/Listings';
 
 class App extends React.Component {
   constructor(props) {
@@ -11,8 +14,9 @@ class App extends React.Component {
       useNavMenu: false
     };
     this.navInfo = {
-      "Listings": "Car Listings",
-      "Even more stuff": "Lots of stuff coming this way lol"
+      "Home": {component: <Home />},
+      "Listings": {title: "Car Listings", component: <Listings />},
+      "Support": {title: "Contact Support", component: <Contact />}
     };
   }
 
@@ -29,7 +33,7 @@ class App extends React.Component {
             <div style={{flexGrow: 10}} />
             {
               (() => { // create NavButtons using object and insert NavDividers in between
-                let arr = Object.keys(this.navInfo).map(key => <NavButton name={key} content={this.navInfo[key]} onClick={this.handleOnClick(key)} />).reduce((r, a) => r.concat(a, <NavDivider />), []);
+                let arr = Object.keys(this.navInfo).slice(1).map(key => <NavButton name={key} key={key} content={this.navInfo[key].title} onClick={this.handleOnClick(key)} />).reduce((r, a) => r.concat(a, <NavDivider />), []);
                 arr.pop();
                 return arr;
               })()
@@ -37,7 +41,8 @@ class App extends React.Component {
             <div style={{flexGrow: 1}} />
           </div>
         </header>
-        Current Tab: {this.state.currentTab}
+        <br />
+        {this.navInfo[this.state.currentTab].component}
       </div>
     );
   }
