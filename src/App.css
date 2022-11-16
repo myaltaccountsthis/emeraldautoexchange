@@ -41,5 +41,35 @@
 }
 
 .Page {
+  font-size: large;
+}
 
+.Contact-Form {
+  display: flex;
+  flex-direction: column;
+}
+.Contact-Form-Element {
+  width: 100%;
+  min-width: 100px;
+}
+/* add some media query to make this not a row if small screen */
+.Contact-Form-Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.Contact-Form-Row-Element {
+  margin: 0px 20px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.Contact-Form-Container {
+  width: 60%;
+  min-width: 300px;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px 20px 30px 20px;
+  background-color: rgb(192, 248, 215);
+  border-radius: 10px;
 }
