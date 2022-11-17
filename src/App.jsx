@@ -31,7 +31,7 @@ class App extends React.Component {
       <div className="App">
         <header>
           <div className="App-Nav">
-            <NavButton content={<img src="emeraldicon.png" alt="Emerald Auto" />} onClick={this.handleOnClick("Home")} />
+            <NavButton content={<img src="./emeraldicon.png" alt="Emerald Auto" />} onClick={this.handleOnClick("Home")} />
             <div style={{flexGrow: 2}} />
             {
               (() => { // create NavButtons using object and insert NavDividers in between
