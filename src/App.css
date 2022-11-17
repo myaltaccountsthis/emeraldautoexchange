@@ -44,6 +44,16 @@
   font-size: large;
 }
 
+.Rounded {
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(52, 105, 64);
+  height: 40px;
+  font-size: 24px;
+  font-family: inherit;
+  color: white;
+}
+
 .Contact-Form {
   display: flex;
   flex-direction: column;
@@ -51,6 +61,7 @@
 .Contact-Form-Element {
   width: 100%;
   min-width: 100px;
+  box-sizing: border-box;
 }
 /* add some media query to make this not a row if small screen */
 .Contact-Form-Row {

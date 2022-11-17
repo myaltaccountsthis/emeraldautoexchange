@@ -10,24 +10,29 @@ class Contact extends React.Component {
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label for="fname" className="Contact-Form-Element">First Name</label><br />
-                <input type="text" name="fname" className="Contact-Form-Element"></input><br />
+                <input type="text" name="fname" className="Contact-Form-Element" placeholder="John" minLength="4" maxLength="20" required></input><br />
               </div>
               <div className="Contact-Form-Row-Element">
                 <label for="lname" className="Contact-Form-Element">Last Name</label><br />
-                <input type="text" name="lname" className="Contact-Form-Element"></input><br />
+                <input type="text" name="lname" className="Contact-Form-Element" placeholder="Doe" maxLength="20" required></input><br />
               </div>
             </div><br />
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label for="email" className="Contact-Form-Element">Email</label><br />
-                <input type="text" name="email" className="Contact-Form-Element"></input><br />
+                <input type="email" name="email" className="Contact-Form-Element" placeholder="johndoe@gmail.com" required></input><br />
               </div>
               <div className="Contact-Form-Row-Element">
                 <label for="phone" className="Contact-Form-Element">Phone</label><br />
-                <input type="text" name="phone" className="Contact-Form-Element"></input><br />
+                <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" required></input><br />
               </div>
-            </div><br /><br />
-            <button type="submit" style={{ width: "80%", margin: "auto" }}>Submit</button>
+            </div><br />
+            <div className="Contact-Form-Row-Element">
+              <label for="reason" className="Contact-Form-Element">Reason</label><br />
+              <input type="text" name="reason" className="Contact-Form-Element" maxLength="1000" style={{ height: "100%" }} required></input><br />
+            </div><br />
+            <br />
+            <button type="submit" className="Rounded" style={{ width: "80%", margin: "auto" }}>Submit</button>
           </form>
         </div>
       </div>
