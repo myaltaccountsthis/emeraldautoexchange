@@ -89,3 +89,7 @@
   background-color: rgb(192, 248, 215);
   border-radius: 10px;
 }
+
+.Info-Row {
+  height: 500px;
+}
