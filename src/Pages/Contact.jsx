@@ -29,10 +29,10 @@ class Contact extends React.Component {
             </div><br />
             <div className="Contact-Form-Row-Element">
               <label for="reason" className="Contact-Form-Element">Reason</label><br />
-              <input type="text" name="reason" className="Contact-Form-Element" maxLength="1000" style={{ height: "100%" }} required></input><br />
+              <textarea type="text" name="reason" className="Contact-Form-Element" maxLength="1000" placeholder="Please provide a reason" style={{ minWidth: "100%", maxWidth: "100%", minHeight: "3em", fontFamily: "inherit", fontSize: ".8em", resize: "vertical" }} required></textarea><br />
             </div><br />
             <br />
-            <button type="submit" className="Rounded" style={{ width: "80%", margin: "auto" }}>Submit</button>
+            <button type="submit" className="Rounded" style={{ width: "80%", margin: "auto" }} onSubmit="alert">Submit</button>
           </form>
         </div>
       </div>

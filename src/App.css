@@ -41,7 +41,7 @@
 }
 
 .Page {
-  font-size: large;
+  font-size: larger;
 }
 
 .Rounded {
@@ -66,8 +66,13 @@
 /* add some media query to make this not a row if small screen */
 .Contact-Form-Row {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
+}
+@media screen and (min-width: 601px) {
+  .Contact-Form-Row {
+    flex-direction: row;
+  }
 }
 .Contact-Form-Row-Element {
   margin: 0px 20px;

@@ -41,6 +41,11 @@ class App extends React.Component {
               })()
             }
             <div style={{flexGrow: 1, maxWidth: "50px"}} />
+            <div className="App-Nav-Menu-Button">
+              {
+                // HAMBURGER BUTTON GOES HERE
+              }
+            </div>
           </div>
         </header>
         <div style={{height: "30px"}} />
