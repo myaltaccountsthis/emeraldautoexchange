@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/emeraldautoexchange/static/css/main.8fcde63b.css",
+    "main.js": "/emeraldautoexchange/static/js/main.99d67d77.js",
+    "index.html": "/emeraldautoexchange/index.html",
+    "main.8fcde63b.css.map": "/emeraldautoexchange/static/css/main.8fcde63b.css.map",
+    "main.99d67d77.js.map": "/emeraldautoexchange/static/js/main.99d67d77.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8fcde63b.css",
+    "static/js/main.99d67d77.js"
+  ]
+}
