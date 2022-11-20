@@ -7,9 +7,9 @@ Copy the node_modules folder into the actual code folder
 
 ## How to run the website
 
-Locally: 
+Locally: \
 Open CMD in the code folder and run `npm start`\
-The website should open, if not go to [localhost:3000](http://localhost:3000)\
+The website should open, if not go to [localhost:3000](http://localhost:3000)
 
-Deploy:
+Deploy:\
 Run `npm run deploy`
