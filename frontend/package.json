@@ -1,7 +1,6 @@
 {
   "name": "emeraldautoexchange",
   "version": "0.1.0",
-  "homepage": "https://myaltaccountsthis.github.io/emeraldautoexchange",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
