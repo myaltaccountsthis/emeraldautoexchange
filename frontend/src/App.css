@@ -9,15 +9,14 @@
 
 .App-Header-Row {
   width: 100%;
-  height: 100px;
   padding: 10px 0px;
 }
 
 .App-Nav {
   display: flex;
   background-color:rgb(225, 240, 218);
-  width: 100%;
-  padding: 20px 10px;
+  width: auto;
+  padding: 0px 10px;
   
   font-size: 1.5em;
   
@@ -33,7 +32,7 @@
 }
 
 .App-Nav-Element {
-  margin: 0px;
+  margin: 0px 4px;
   border: none;
   background-color: transparent;
   font: inherit;
@@ -48,15 +47,10 @@
 
 .App-Nav-Center-Icon {
   flex: auto;
+  margin-right: 52px;
 }
 .App-Nav-Button-Img {
   max-height: 80px;
-}
-
-.App-Nav-Divider {
-  display: none;
-  border: 1px solid darkgray;
-  height: 60px;
 }
 
 .App-Nav-Menu-Button {
@@ -97,10 +91,20 @@
   flex-grow: 1;
   text-align: left;
 }
+input.Contact-Form-Element, textarea.Contact-Form-Element {
+  border-radius: 8px;
+  border: 3px solid darkgreen;
+  padding: 5px 8px;
+  margin-top: 4px;
+}
+textarea.Contact-Form-Element {
+  font-family: inherit;
+  font-size: inherit;
+}
 
 .Contact-Form-Container {
   width: 60%;
-  min-width: 300px;
+  min-width: 200px;
   max-width: 600px;
   margin: auto;
   padding: 20px 20px 30px 20px;
@@ -109,7 +113,50 @@
 }
 
 .Info-Row {
-  height: 500px;
+  min-height: 300px;
+  padding: 20px;
+}
+
+.Home-Image-Button {
+  border-radius: 50%;
+  border: 0px;
+  background-color: gray;
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+}
+
+.Home-Image-Button:hover {
+  background-color: darkgray;
+}
+
+.Home-Image-Row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 400px;
+  
+  max-width: 100%;
+  justify-content: space-between;
+}
+.Home-Image-Row > img {
+  object-fit: contain;
+  flex: 1 1 auto;
+  min-width: 0px;
+  max-height: 300px;
+  margin: 50px 0px;
+}
+
+.Home-Image-Arrow {
+  border: 0px;
+  min-width: 0px;
+  background-color: transparent;
+  object-fit: scale-down;
+  flex: 0 1 auto;
+}
+.Home-Image-Arrow > img {
+  min-width: 0px;
+  width: 100%;
 }
 
 .Med-Screen {
@@ -137,6 +184,10 @@
 
   .Med-Screen {
     display: initial;
+  }
+
+  .Home-Image-Arrow {
+    margin: 0px 20px;
   }
 }
 @media screen and (min-width: 721px) {

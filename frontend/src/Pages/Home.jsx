@@ -5,18 +5,18 @@ class Home extends React.Component {
         return (
             <div className="Page">
                 <div className="App-Header-Row">
-                    <div className="App-Header" style={{ height: "60px" }}>Welcome to Emerald Auto Exchange</div>
+                    <div className="App-Header">Welcome to Emerald Auto Exchange</div><br />
                     <div style={{ fontSize: "24px" }}>Finer Cars for Finer People</div>
                 </div>
                 <br />
-                <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", padding: "50px 0px 0px 0px" }}>
+                <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
                     <div className="Home-Image-Row">
-                        <button>
-                            <img src="arrowL" alt="Left"></img>
+                        <button className="Home-Image-Arrow">
+                            <img src="arrowL.png" alt="Left"></img>
                         </button>
-                        <img src="emerald.png" alt="Car" style={{ objectFit: "contain", height: "300px", margin: "50px 0px" }}></img>
-                        <button>
-                            <img src="arrowR" alt="Right"></img>
+                        <img src="emerald.png" alt="Car"></img>
+                        <button className="Home-Image-Arrow">
+                            <img src="arrowR.png" alt="Right"></img>
                         </button>
                     </div>
                     <div>

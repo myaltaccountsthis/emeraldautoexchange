@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 import NavButton from './Components/NavButton';
-import NavDivider from './Components/NavDivider';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
 import Listings from './Pages/Listings';
@@ -45,11 +44,14 @@ class App extends React.Component {
             <NavButton content={<img src="emerald.png" alt="Emerald Auto" className="App-Nav-Button-Img" />} onClick={this.handleOnClick("Home")} className="App-Nav-Center-Icon" />
             <div className="App-Nav-Main" id="App-Nav-Main">
               {
+                /*
                 (() => { // create NavButtons using object and insert NavDividers in between
                   let arr = Object.keys(this.navInfo).slice(1).map(key => <NavButton key={key} content={this.navInfo[key].title} onClick={this.handleOnClick(key)} />).reduce((r, a) => r.concat(a, <NavDivider />), []);
                   arr.pop();
                   return arr;
                 })()
+                */
+                Object.keys(this.navInfo).slice(1).map(key => <NavButton key={key} content={this.navInfo[key].title} onClick={this.handleOnClick(key)} />)
               }
             </div>
             <div className="Med-Screen" style={{ flexGrow: 1, maxWidth: "50px" }} />
