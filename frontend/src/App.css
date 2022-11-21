@@ -113,7 +113,7 @@ textarea.Contact-Form-Element {
 }
 
 .Info-Row {
-  min-height: 300px;
+  min-height: 200px;
   padding: 20px;
 }
 
@@ -154,9 +154,16 @@ textarea.Contact-Form-Element {
   object-fit: scale-down;
   flex: 0 1 auto;
 }
+
 .Home-Image-Arrow > img {
   min-width: 0px;
   width: 100%;
+}
+
+.Home-About-Text {
+  font-size: 24px;
+  width: 80%;
+  margin: auto;
 }
 
 .Med-Screen {
@@ -189,9 +196,18 @@ textarea.Contact-Form-Element {
   .Home-Image-Arrow {
     margin: 0px 20px;
   }
+  
+  .Home-About-Text {
+    width: 70%;
+  }
+  
 }
 @media screen and (min-width: 721px) {
   .Contact-Form-Row {
     flex-direction: row;
+  }
+  
+  .Home-About-Text {
+    width: 60%;
   }
 }

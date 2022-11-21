@@ -25,9 +25,14 @@ class Home extends React.Component {
                         <button className="Home-Image-Button"></button>
                     </div>
                 </div>
-                <div style={{ fontSize: 40, height: "60px", padding: "20px" }}>About Us</div>
                 <div className="Info-Row">
-
+                    <div style={{ fontSize: 40, padding: "20px" }}>About Us</div>
+                    <div className="Home-About-Text">
+                        Emerald Auto Exchange was created to give customers used cars for the price they are worth.
+                        We strive to keep prices fair for our many cars of various conditions.
+                        Our wide selection of used cars will ensure that you can find the right car for the right price.
+                    </div>
+                    <br />
                 </div>
                 <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
 
