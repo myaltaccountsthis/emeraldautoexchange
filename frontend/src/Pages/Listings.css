@@ -1,0 +1,21 @@
+.Search-Bar {
+  border: 2px solid black;
+  border-radius: 20px;
+  max-width: 800px;
+  width: 60%;
+  padding: 10px 12px;
+
+  font-family: inherit;
+  font-size: 20px;
+}
+
+.Listings-Container {
+  display: flex;
+  margin: auto;
+  box-sizing: border-box;
+  max-width: 1200px;
+  border: 2px solid rgb(34, 124, 34);
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+}

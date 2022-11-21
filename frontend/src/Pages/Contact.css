@@ -1,0 +1,82 @@
+.Contact-Form {
+  display: flex;
+  flex-direction: column;
+}
+
+.Contact-Form-Element {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.Contact-Form-Row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Contact-Form-Row-Element {
+  margin: 0px 20px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+label.Contact-Form-Element {
+  font-size: 18px;
+}
+
+input.Contact-Form-Element, textarea.Contact-Form-Element {
+  border-radius: 8px;
+  border: 3px solid darkgreen;
+  padding: 5px 8px;
+  margin: 6px auto;
+  font-family: inherit;
+  font-size: 16px;
+}
+textarea.Contact-Form-Element {
+  width: 100%;
+  resize: vertical;
+  min-height: 72px;
+}
+
+.Contact-Form-Container {
+  width: 80%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px 20px 30px 20px;
+  background-color: rgb(192, 248, 215);
+  border-radius: 10px;
+}
+
+.Contact-Submit {
+  border-radius: 10px;
+  border-style: none;
+  background-color: rgb(52, 105, 64);
+  height: 40px;
+  font-size: 24px;
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+  transition: .15s;
+}
+.Contact-Submit:hover {
+  background-color: rgb(30, 70, 35);
+}
+
+@media screen and (min-width: 721px) {
+  .Contact-Form-Row {
+    flex-direction: row;
+  }
+
+  .Contact-Form-Container {
+    min-width: 200px;
+    width: 60%;
+  }
+
+  label.Contact-Form-Element {
+    font-size: 20px;
+  }
+  
+  input.Contact-Form-Element, textarea.Contact-Form-Element {
+    font-size: 18px;
+  }
+}

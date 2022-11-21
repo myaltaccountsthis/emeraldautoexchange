@@ -1,6 +1,10 @@
-.App {
+* {
   text-align: center;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+input, textarea {
+  text-align: left;
 }
 
 .App-Header {
@@ -26,13 +30,18 @@
 }
 
 .App-Nav-Main {
-  display: none;
+  display: flex;
+  overflow: hidden;
   flex-direction: column;
   width: 100% !important;
+  max-height: 200px;
+  transition: max-height .1s ease-in-out;
+}
+.App-Nav-Main > .App-Nav-Element {
+  padding-bottom: 10px;
 }
 
 .App-Nav-Element {
-  margin: 0px 4px;
   border: none;
   background-color: transparent;
   font: inherit;
@@ -46,11 +55,14 @@
 }
 
 .App-Nav-Center-Icon {
-  flex: auto;
+  flex: 1 1 auto;
+  margin-left: 0px;
   margin-right: 52px;
 }
 .App-Nav-Button-Img {
+  flex: 0 1 auto;
   max-height: 80px;
+  min-width: 0px;
 }
 
 .App-Nav-Menu-Button {
@@ -62,108 +74,9 @@
   font-size: larger;
 }
 
-.Rounded {
-  border-radius: 10px;
-  border-style: none;
-  background-color: rgb(52, 105, 64);
-  height: 40px;
-  font-size: 24px;
-  font-family: inherit;
-  color: white;
-}
-
-.Contact-Form {
-  display: flex;
-  flex-direction: column;
-}
-.Contact-Form-Element {
-  width: 100%;
-  box-sizing: border-box;
-}
-/* add some media query to make this not a row if small screen */
-.Contact-Form-Row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.Contact-Form-Row-Element {
-  margin: 0px 20px;
-  flex-grow: 1;
-  text-align: left;
-}
-input.Contact-Form-Element, textarea.Contact-Form-Element {
-  border-radius: 8px;
-  border: 3px solid darkgreen;
-  padding: 5px 8px;
-  margin-top: 4px;
-}
-textarea.Contact-Form-Element {
-  font-family: inherit;
-  font-size: inherit;
-}
-
-.Contact-Form-Container {
-  width: 60%;
-  min-width: 200px;
-  max-width: 600px;
-  margin: auto;
-  padding: 20px 20px 30px 20px;
-  background-color: rgb(192, 248, 215);
-  border-radius: 10px;
-}
-
 .Info-Row {
   min-height: 200px;
   padding: 20px;
-}
-
-.Home-Image-Button {
-  border-radius: 50%;
-  border: 0px;
-  background-color: gray;
-  height: 15px;
-  width: 15px;
-  margin: 3px;
-}
-
-.Home-Image-Button:hover {
-  background-color: darkgray;
-}
-
-.Home-Image-Row {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  height: 400px;
-  
-  max-width: 100%;
-  justify-content: space-between;
-}
-.Home-Image-Row > img {
-  object-fit: contain;
-  flex: 1 1 auto;
-  min-width: 0px;
-  max-height: 300px;
-  margin: 50px 0px;
-}
-
-.Home-Image-Arrow {
-  border: 0px;
-  min-width: 0px;
-  background-color: transparent;
-  object-fit: scale-down;
-  flex: 0 1 auto;
-}
-
-.Home-Image-Arrow > img {
-  min-width: 0px;
-  width: 100%;
-}
-
-.Home-About-Text {
-  font-size: 24px;
-  width: 80%;
-  margin: auto;
 }
 
 .Med-Screen {
@@ -175,6 +88,11 @@ textarea.Contact-Form-Element {
     display: flex;
     flex-direction: row;
     width: auto !important;
+    max-height: none !important;
+  }
+  
+  .App-Nav-Element {
+    margin: 0px 4px;
   }
 
   .App-Nav-Menu-Button {

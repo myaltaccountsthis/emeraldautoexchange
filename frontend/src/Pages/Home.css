@@ -1,0 +1,49 @@
+.Home-Image-Button {
+  border-radius: 50%;
+  border: 0px;
+  background-color: gray;
+  height: 15px;
+  width: 15px;
+  margin: 3px;
+}
+
+.Home-Image-Button:hover {
+  background-color: darkgray;
+}
+
+.Home-Image-Row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 400px;
+  
+  max-width: 100%;
+  justify-content: space-between;
+}
+
+.Home-Image-Row > img {
+  object-fit: contain;
+  flex: 1 1 auto;
+  min-width: 0px;
+  max-height: 300px;
+  margin: 50px 0px;
+}
+
+.Home-Image-Arrow {
+  border: 0px;
+  min-width: 0px;
+  background-color: transparent;
+  object-fit: scale-down;
+  flex: 0 1 auto;
+}
+
+.Home-Image-Arrow > img {
+  min-width: 0px;
+  width: 100%;
+}
+
+.Home-About-Text {
+  font-size: 24px;
+  width: 80%;
+  margin: auto;
+}

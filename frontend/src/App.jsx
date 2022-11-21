@@ -27,10 +27,10 @@ class App extends React.Component {
 
   toggleMenu() {
     const element = document.getElementById("App-Nav-Main");
-    if (element.style.display)
-      element.style.display = "";
+    if (element.style.maxHeight)
+      element.style.maxHeight = "";
     else
-      element.style.display = "flex";
+      element.style.maxHeight = "0px";
   }
   
   render() {

@@ -1,8 +1,10 @@
-import React from "react";
+import React from 'react';
+import './Contact.css';
 
 class Contact extends React.Component {
   onSubmit() {
 
+    return false;
   }
 
   forceDashes(event) {
@@ -22,7 +24,7 @@ class Contact extends React.Component {
       <div className="Page">
         <div className="App-Header">Contact Us</div><br />
         <div className="Contact-Form-Container">
-          <form className="Contact-Form">
+          <form className="Contact-Form" onSubmit={this.ons}>
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="fname" className="Contact-Form-Element">First Name</label><br />
@@ -48,7 +50,7 @@ class Contact extends React.Component {
               <textarea type="text" name="reason" className="Contact-Form-Element" maxLength="1000" placeholder="Please provide a reason" required></textarea><br />
             </div><br />
             <br />
-            <button type="submit" className="Rounded" style={{ width: "80%", margin: "auto" }} onSubmit={this.onSubmit}>Submit</button>
+            <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>
           </form>
           <br />
         </div>
