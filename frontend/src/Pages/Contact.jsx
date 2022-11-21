@@ -50,6 +50,7 @@ class Contact extends React.Component {
             <br />
             <button type="submit" className="Rounded" style={{ width: "80%", margin: "auto" }} onSubmit={this.onSubmit}>Submit</button>
           </form>
+          <br />
         </div>
       </div>
     );
