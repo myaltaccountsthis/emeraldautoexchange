@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/emeraldautoexchange/static/css/main.8fcde63b.css",
-    "main.js": "/emeraldautoexchange/static/js/main.99d67d77.js",
+    "main.css": "/emeraldautoexchange/static/css/main.1ad93ed9.css",
+    "main.js": "/emeraldautoexchange/static/js/main.456ec219.js",
     "index.html": "/emeraldautoexchange/index.html",
-    "main.8fcde63b.css.map": "/emeraldautoexchange/static/css/main.8fcde63b.css.map",
-    "main.99d67d77.js.map": "/emeraldautoexchange/static/js/main.99d67d77.js.map"
+    "main.1ad93ed9.css.map": "/emeraldautoexchange/static/css/main.1ad93ed9.css.map",
+    "main.456ec219.js.map": "/emeraldautoexchange/static/js/main.456ec219.js.map"
   },
   "entrypoints": [
-    "static/css/main.8fcde63b.css",
-    "static/js/main.99d67d77.js"
+    "static/css/main.1ad93ed9.css",
+    "static/js/main.456ec219.js"
   ]
 }
