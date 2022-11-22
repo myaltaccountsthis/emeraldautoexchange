@@ -110,22 +110,9 @@ input, textarea {
   .Med-Screen {
     display: initial;
   }
-
-  .Home-Image-Arrow {
-    margin: 0px 20px;
-  }
-  
-  .Home-About-Text {
-    width: 70%;
-  }
-  
 }
 @media screen and (min-width: 721px) {
   .Contact-Form-Row {
     flex-direction: row;
-  }
-  
-  .Home-About-Text {
-    width: 60%;
   }
 }
