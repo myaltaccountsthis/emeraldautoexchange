@@ -8,7 +8,7 @@ input, textarea {
 }
 
 .App-Header {
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .App-Header-Row {
@@ -112,6 +112,9 @@ input, textarea {
   }
 }
 @media screen and (min-width: 721px) {
+  .App-Header {
+    font-size: 40px;
+  }
   .Contact-Form-Row {
     flex-direction: row;
   }

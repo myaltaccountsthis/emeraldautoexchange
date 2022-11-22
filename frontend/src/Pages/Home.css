@@ -1,3 +1,7 @@
+.Home-Tagline {
+  font-size: 24px;
+}
+
 .Home-Image-Button {
   border-radius: 50%;
   border: 0px;
@@ -51,7 +55,7 @@
 }
 
 .Home-About-Text {
-  font-size: 24px;
+  font-size: 16px;
   width: 80%;
   margin: auto;
 }
@@ -62,12 +66,18 @@
   }
   
   .Home-About-Text {
+    font-size: 20px;
     width: 70%;
   }
 }
 
 @media screen and (min-width: 721px) {
+  .Home-Tagline {
+    font-size: 28px;
+  }
+
   .Home-About-Text {
+    font-size: 24px;
     width: 60%;
   }
 }

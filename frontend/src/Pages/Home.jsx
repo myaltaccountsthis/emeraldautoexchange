@@ -27,7 +27,7 @@ class Home extends React.Component {
       <div className="Page">
         <div className="App-Header-Row">
           <div className="App-Header">Welcome to Emerald Auto Exchange</div><br />
-          <div style={{ fontSize: "24px" }}>Finer Cars for Finer People</div>
+          <div className="Home-Tagline">Finer Cars for Finer People</div>
         </div>
         <br />
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
@@ -47,7 +47,9 @@ class Home extends React.Component {
           </div>
         </div>
         <div className="Info-Row">
-          <div style={{ fontSize: 40, padding: "20px" }}>About Us</div>
+          <br />
+          <div className="App-Header">About Us</div>
+          <br />
           <div className="Home-About-Text">
             Emerald Auto Exchange was created to give customers used cars for the price they are worth.
             We strive to keep prices fair for our many cars of various conditions.
