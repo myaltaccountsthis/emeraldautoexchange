@@ -5,17 +5,17 @@
 .Home-Image-Button {
   border-radius: 50%;
   border: 0px;
-  background-color: rgb(100, 100, 100);
+  background-color: rgb(150, 150, 150);
   height: 15px;
   width: 15px;
   margin: 3px;
 }
 .Home-Image-Button-Active {
-  background-color: rgb(200, 200, 200);
+  background-color: rgb(220, 220, 220) !important;
 }
 
 .Home-Image-Button:hover {
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(190, 190, 190);
   cursor: pointer;
 }
 
@@ -43,6 +43,11 @@
   background-color: transparent;
   object-fit: scale-down;
   flex: 0 1 auto;
+  transition: background-color .15s;
+}
+
+.Home-Image-Arrow:hover {
+  background-color: rgba(64, 64, 64, .2);
 }
 
 .Home-Image-Arrow > img {
