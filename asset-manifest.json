@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/emeraldautoexchange/static/css/main.1ad93ed9.css",
-    "main.js": "/emeraldautoexchange/static/js/main.456ec219.js",
+    "main.css": "/emeraldautoexchange/static/css/main.e5c8814c.css",
+    "main.js": "/emeraldautoexchange/static/js/main.d41e8850.js",
+    "static/media/emerald.svg": "/emeraldautoexchange/static/media/emerald.92380c7db640254c5126818bd08aef6c.svg",
+    "static/media/magnifying-glass.svg": "/emeraldautoexchange/static/media/magnifying-glass.9ed73ca1f7df9ef79e99e0286bde2dba.svg",
     "index.html": "/emeraldautoexchange/index.html",
-    "main.1ad93ed9.css.map": "/emeraldautoexchange/static/css/main.1ad93ed9.css.map",
-    "main.456ec219.js.map": "/emeraldautoexchange/static/js/main.456ec219.js.map"
+    "main.e5c8814c.css.map": "/emeraldautoexchange/static/css/main.e5c8814c.css.map",
+    "main.d41e8850.js.map": "/emeraldautoexchange/static/js/main.d41e8850.js.map"
   },
   "entrypoints": [
-    "static/css/main.1ad93ed9.css",
-    "static/js/main.456ec219.js"
+    "static/css/main.e5c8814c.css",
+    "static/js/main.d41e8850.js"
   ]
 }
