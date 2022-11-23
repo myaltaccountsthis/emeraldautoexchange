@@ -25,17 +25,23 @@ label.Contact-Form-Element {
 }
 
 input.Contact-Form-Element, textarea.Contact-Form-Element {
-  border-radius: 8px;
+  border-radius: 16px;
   border: 3px solid darkgreen;
   padding: 5px 8px;
   margin: 6px auto;
   font-family: inherit;
   font-size: 16px;
+  transition: border-radius .2s;
 }
+input.Contact-Form-Element:focus, textarea.Contact-Form-Element:focus {
+  border-radius: 8px;
+}
+
 textarea.Contact-Form-Element {
   width: 100%;
-  resize: vertical;
+  resize: none;
   min-height: 72px;
+  overflow: hidden;
 }
 
 .Contact-Form-Container {

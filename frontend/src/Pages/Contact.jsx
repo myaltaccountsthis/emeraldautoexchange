@@ -19,6 +19,13 @@ class Contact extends React.Component {
     target.selectionEnd = len < 2 ? len : len - (2 - Math.floor(nums / 3));
   }
 
+  resizeTextArea(event) {
+    const target = event.target;
+    target.style.height = "auto";
+    console.log(target.scrollHeight);
+    target.style.height = (target.scrollHeight + 6) + "px";
+  }
+
   render() {
     return (
       <div className="Page">
@@ -42,12 +49,12 @@ class Contact extends React.Component {
               </div>
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="phone" className="Contact-Form-Element">Phone</label><br />
-                <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" maxLength="12" onChange={this.forceDashes} required></input><br />
+                <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" maxLength="12" onInput={this.forceDashes} required></input><br />
               </div>
             </div><br />
             <div className="Contact-Form-Row-Element">
               <label htmlFor="reason" className="Contact-Form-Element">Reason</label><br />
-              <textarea type="text" name="reason" className="Contact-Form-Element" maxLength="1000" placeholder="Please provide a reason" required></textarea><br />
+              <textarea type="text" name="reason" className="Contact-Form-Element" maxLength="1000" placeholder="Please provide a reason" onInput={this.resizeTextArea} required></textarea><br />
             </div><br />
             <br />
             <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>

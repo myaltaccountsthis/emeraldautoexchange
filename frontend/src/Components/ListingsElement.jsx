@@ -1,9 +1,9 @@
 function ListingsElement(props) {
-    return (
-        <div className="Listings-Element">
-            
-        </div>
-    );
+  return (
+    <div className="Listings-Element">
+      
+    </div>
+  );
 }
 
 export default ListingsElement;

@@ -59,10 +59,9 @@ input, textarea {
   margin-left: 0px;
   margin-right: 52px;
 }
-.App-Nav-Button-Img {
+.App-Nav-Button-svg {
   flex: 0 1 auto;
-  max-height: 80px;
-  min-width: 0px;
+  height: 80px;
 }
 
 .App-Nav-Menu-Button {

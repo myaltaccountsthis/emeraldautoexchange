@@ -4,12 +4,16 @@ import NavButton from './Components/NavButton';
 import Contact from './Pages/Contact';
 import Home from './Pages/Home';
 import Listings from './Pages/Listings';
+import {ReactComponent as Logo} from './emerald.svg';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+    let current = window.sessionStorage.getItem("current");
+    if (!current)
+      window.sessionStorage.setItem("current", current = "Home");
     this.state = {
-      currentTab: "Home",
+      currentTab: current,
       useNavMenu: false
     };
     const homeComponent = <Home />;
@@ -19,6 +23,10 @@ class App extends React.Component {
       "Listings": {title: "Car Listings", component: <Listings />},
       "Support": {title: "Contact Support", component: <Contact />}
     };
+  }
+
+  componentDidUpdate() {
+    window.sessionStorage.setItem("current", this.state.currentTab);
   }
 
   handleOnClick(name) {
@@ -38,10 +46,10 @@ class App extends React.Component {
       <div className="App">
         <header>
           <div className="App-Nav">
-            <NavButton content={<img src="emerald.png" alt="Emerald Auto" className="App-Nav-Button-Img" />} onClick={this.handleOnClick("Home")} className="Med-Screen" />
+            <NavButton content={<Logo className="App-Nav-Button-svg" />} onClick={this.handleOnClick("Home")} className="Med-Screen" />
             <NavButton className="App-Nav-Menu-Button" content={<img src="hamburgerbutton.png" alt="Menu" style={{ height: "40px" }} />} onClick={this.toggleMenu} />
             <div className="Med-Screen" style={{ flexGrow: 2 }} />
-            <NavButton content={<img src="emerald.png" alt="Emerald Auto" className="App-Nav-Button-Img" />} onClick={this.handleOnClick("Home")} className="App-Nav-Center-Icon" />
+            <NavButton content={<Logo className="App-Nav-Button-svg" />} onClick={this.handleOnClick("Home")} className="App-Nav-Center-Icon" />
             <div className="App-Nav-Main" id="App-Nav-Main">
               {
                 /*
