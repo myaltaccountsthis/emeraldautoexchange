@@ -60,9 +60,29 @@
 }
 
 .Home-About-Text {
-  font-size: 16px;
+  font-size: 18px;
   width: 80%;
   margin: auto;
+}
+
+.Home-Founder-Holder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.Home-Founder-Column {
+  flex: 0 1 auto;
+  max-width: 400px;
+}
+
+.Home-Founder-Title {
+  font-size: 20px;
+}
+
+.Home-Founder-Image {
+  object-fit: contain;
+  width: 100%;
 }
 
 @media screen and (min-width: 601px) {
@@ -74,6 +94,10 @@
     font-size: 20px;
     width: 70%;
   }
+
+  .Home-Founder-Title {
+    font-size: 24px;
+  }
 }
 
 @media screen and (min-width: 721px) {
@@ -84,5 +108,9 @@
   .Home-About-Text {
     font-size: 24px;
     width: 60%;
+  }
+
+  .Home-Founder-Title {
+    font-size: 28px;
   }
 }
