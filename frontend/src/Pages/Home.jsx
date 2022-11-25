@@ -52,7 +52,7 @@ class Home extends React.Component {
           <br />
           <div className="Home-About-Text">
             Emerald Auto Exchange was created to give customers used cars for the price they are worth.
-            We strive to keep prices fair for our many cars of various conditions.
+            Since we started the company, we have always strived to keep prices fair for our many cars of various conditions.
             Our wide selection of used cars will ensure that you can find the right car for the right price.
           </div>
           <br />
@@ -62,6 +62,16 @@ class Home extends React.Component {
           <div className="App-Header">The Founders</div>
           <br />
           <div className="Home-Founder-Holder">
+            <div className="Home-Founder-Column">
+              <div className="Home-Founder-Title">John Doe</div>
+              <br />
+              <img src="" alt="John Doe" className="Home-Founder-Image"></img>
+              <br />
+              <div className="Home-About-Text">
+                John Doe is an interesting individual who loves cars.
+                He always wanted to become a car dealer when he grew up.
+              </div>
+            </div>
             <div className="Home-Founder-Column">
               <div className="Home-Founder-Title">John Doe</div>
               <br />
