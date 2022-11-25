@@ -1,8 +1,9 @@
 .Search-Bar {
   max-width: 800px;
   width: 60%;
+  height: 40px;
   margin: auto;
-  padding: 10px 12px;
+  padding: 4px 12px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -37,9 +38,29 @@
   margin: auto;
   box-sizing: border-box;
   max-width: 1200px;
-  border: 2px solid rgb(34, 124, 34);
+  text-align: center;
   border-radius: 8px;
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
+}
+.Listings-None {
+  flex: auto;
+  font-size: larger;
+  text-align: center;
+}
+
+.Listings-Element {
+  border: 2px solid rgb(34, 124, 34);
+  margin: 8px;
+  padding: 8px;
+  width: 33%;
+}
+.Listings-Element * {
+  font-size: 1.2vw;
+}
+
+.Listings-Element-Container {
+  display: flex;
+  flex-direction: column;
 }

@@ -19,7 +19,7 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className={this.getFocusedName("Search-Bar")}>
-        <SearchIcon style={{ maxHeight: "32px" }} />
+        <SearchIcon width="32px" height="32px" />
         <input className={this.getFocusedName("Search-Text")} type="text" onFocus={this.onFocusEvent(true)} onBlur={this.onFocusEvent(false)} onKeyUp={this.onEnter} />
       </div>
     );

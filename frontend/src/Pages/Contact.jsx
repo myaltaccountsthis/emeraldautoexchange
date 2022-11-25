@@ -22,7 +22,6 @@ class Contact extends React.Component {
   resizeTextArea(event) {
     const target = event.target;
     target.style.height = "auto";
-    console.log(target.scrollHeight);
     target.style.height = (target.scrollHeight + 6) + "px";
   }
 

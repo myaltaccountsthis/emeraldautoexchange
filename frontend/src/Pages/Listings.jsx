@@ -18,17 +18,32 @@ class Listings extends React.Component {
   getListings() {
     // TODO change this
     // TODO need filter on right side of Search-Text inside the Search-Bar flexbox
-    const matches = [];
+    // TODO loading three dots
+    // const matches = [];
+    const matches = [
+      {
+        year: "2003",
+        make: "ford",
+        model: "f150",
+        miles: 39273,
+        condition: 4,
+        price: 13432
+      }
+    ];
     if (matches.length === 0)
-    return (
-      <div>There are no cars that match your search</div>
-    );
-    return matches.map(<ListingsElement />);
+      return (
+        <div className="Listings-None">There are no cars that match your search</div>
+      );
+    return matches.map(item => {
+      item.name = [item.year, item.make, item.model].join(" ");
+      item.key = [item.name, item.miles].join(" ");
+      return item;
+    }).filter(item => item.name.toLowerCase().includes(this.state.search)).map(item => <ListingsElement key={item.key} item={item} />);
   }
 
   onEnter(event) {
     if (event.key === "Enter") {
-      console.log("Entered " + event.target.value);
+      this.setState({ search: event.target.value.toLowerCase() });
     }
   }
 
