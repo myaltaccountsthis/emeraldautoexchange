@@ -58,7 +58,42 @@ class Home extends React.Component {
           <br />
         </div>
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
-
+          <br />
+          <div className="App-Header">The Founders</div>
+          <br />
+          <div className="Home-Founder-Holder">
+            <div className="Home-Founder-Column">
+              <div className="Home-Founder-Title">John Doe</div>
+              <br />
+              <img src="" alt="John Doe" className="Home-Founder-Image"></img>
+              <br />
+              <div className="Home-About-Text">
+                John Doe is an interesting individual who loves cars.
+                He always wanted to become a car dealer when he grew up.
+              </div>
+            </div>
+            <div className="Home-Founder-Column">
+              <div className="Home-Founder-Title">John Doe</div>
+              <br />
+              <img src="" alt="John Doe" className="Home-Founder-Image"></img>
+              <br />
+              <div className="Home-About-Text">
+                John Doe is an interesting individual who loves cars.
+                He always wanted to become a car dealer when he grew up.
+              </div>
+            </div>
+            <div className="Home-Founder-Column">
+              <div className="Home-Founder-Title">John Doe</div>
+              <br />
+              <img src="" alt="John Doe" className="Home-Founder-Image"></img>
+              <br />
+              <div className="Home-About-Text">
+                John Doe is an interesting individual who loves cars.
+                He always wanted to become a car dealer when he grew up.
+              </div>
+            </div>
+          </div>
+          <br />
         </div>
         <div className="Info-Row">
 
