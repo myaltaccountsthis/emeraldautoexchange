@@ -85,6 +85,10 @@ input, textarea {
   display: none;
 }
 
+.App-Secondary {
+  font-size: 24px;
+}
+
 @media screen and (min-width: 601px) {
   .App-Nav-Main {
     display: flex;
@@ -116,5 +120,8 @@ input, textarea {
 @media screen and (min-width: 721px) {
   .App-Header {
     font-size: 40px;
+  }
+  .App-Secondary {
+    font-size: 30px;
   }
 }

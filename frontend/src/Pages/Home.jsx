@@ -27,7 +27,7 @@ class Home extends React.Component {
       <div className="Page">
         <div className="App-Header-Row">
           <div className="App-Header">Welcome to Emerald Auto Exchange</div><br />
-          <div className="Home-Tagline">Finer Cars for Finer People</div>
+          <div className="App-Secondary">Finer Cars for Finer People</div>
         </div>
         <br />
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>

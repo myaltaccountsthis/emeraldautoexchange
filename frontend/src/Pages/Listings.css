@@ -43,7 +43,7 @@
   flex-direction: column;
   flex-wrap: wrap;
   padding: 12px;
-  background-color: green;
+  background-color: rgb(192, 248, 215);
   column-gap: 8px;
 }
 .Listings-None {

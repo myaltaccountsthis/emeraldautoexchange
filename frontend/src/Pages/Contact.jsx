@@ -35,8 +35,8 @@ class Contact extends React.Component {
     return (
       <div className="Page">
         <div className="App-Header">Need Help?</div><br />
-        <div>Contact Us</div>
         <div className="Contact-Form-Container">
+          <div className="App-Secondary">Contact Us</div><br />
           <form className="Contact-Form" onSubmit={this.ons}>
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
@@ -72,7 +72,6 @@ class Contact extends React.Component {
               <label htmlFor="comments" className="Contact-Form-Element">Other comments</label><br />
               <textarea type="text" name="comments" className="Contact-Form-Element" maxLength="1000" placeholder="Anything you want us to know?" onInput={this.resizeTextArea}></textarea><br />
             </div><br />
-            <br />
             <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>
           </form>
           <br />
