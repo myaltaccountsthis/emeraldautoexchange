@@ -21,7 +21,7 @@ class App extends React.Component {
       "Home": {component: homeComponent},
       "HomeTab": {title: "Home", component: homeComponent},
       "Listings": {title: "Car Listings", component: <Listings />},
-      "Support": {title: "Contact Support", component: <Contact />}
+      "Support": {title: "Help Me", component: <Contact />}
     };
   }
 

@@ -40,27 +40,69 @@
   max-width: 1200px;
   text-align: center;
   border-radius: 8px;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
-  padding: 10px;
+  padding: 12px;
+  background-color: green;
+  column-gap: 8px;
 }
 .Listings-None {
   flex: auto;
   font-size: larger;
   text-align: center;
+  background-color: white;
+  border-radius: 6px;
+  padding: 8px;
 }
 
 .Listings-Element {
-  border: 2px solid rgb(34, 124, 34);
-  margin: 8px;
+  box-sizing: border-box;
+  border-radius: 6px;
+  background-color: white;
   padding: 8px;
-  width: 33%;
+  width: 100%;
 }
 .Listings-Element * {
-  font-size: 1.2vw;
+  font-size: 1em;
 }
 
 .Listings-Element-Container {
   display: flex;
   flex-direction: column;
+}
+
+.Listings-Nav-Container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  margin: 16px auto auto auto;
+  font-size: .6em;
+  column-gap: 8px;
+  max-width: 150px;
+  width: 40%;
+}
+.Listings-Nav-Container > * {
+  font-size: inherit;
+}
+
+.Listings-Nav-Button {
+  box-sizing: border-box;
+  padding: 0px 3px;
+}
+
+@media screen and (min-width: 601px) {
+  .Listings-Container {
+    flex-direction: row;
+    padding: 20px;
+  }
+
+  .Listings-None {
+    padding: 16px;
+  }
+
+  .Listings-Element {
+    width: 33%;
+    margin: 8px;
+  }
 }

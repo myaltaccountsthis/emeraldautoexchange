@@ -20,7 +20,7 @@ class Listings extends React.Component {
     // TODO need filter on right side of Search-Text inside the Search-Bar flexbox
     // TODO loading three dots
     // const matches = [];
-    const matches = [
+    let matches = [
       {
         year: "2003",
         make: "ford",
@@ -30,15 +30,17 @@ class Listings extends React.Component {
         price: 13432
       }
     ];
+    matches = matches.map(item => {
+      item.name = [item.year, item.make, item.model].join(" ");
+      item.key = [item.name, item.miles].join(" ");
+      return item;
+    }).filter(item => item.name.toLowerCase().includes(this.state.search));
+
     if (matches.length === 0)
       return (
         <div className="Listings-None">There are no cars that match your search</div>
       );
-    return matches.map(item => {
-      item.name = [item.year, item.make, item.model].join(" ");
-      item.key = [item.name, item.miles].join(" ");
-      return item;
-    }).filter(item => item.name.toLowerCase().includes(this.state.search)).map(item => <ListingsElement key={item.key} item={item} />);
+    return matches.map(item => <ListingsElement key={item.key} item={item} />);
   }
 
   onEnter(event) {
@@ -60,6 +62,11 @@ class Listings extends React.Component {
             {
               this.getListings()
             }
+          </div>
+          <div className="Listings-Nav-Container">
+            <button className="Listings-Nav-Button">L</button>
+            <div>1 ... 3 4 5 ... 10</div>
+            <button className="Listings-Nav-Button">R</button>
           </div>
         </div>
       </div>

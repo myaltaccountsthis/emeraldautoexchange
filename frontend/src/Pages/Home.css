@@ -9,6 +9,7 @@
   height: 15px;
   width: 15px;
   margin: 3px;
+  transition: background-color .2s;
 }
 .Home-Image-Button-Active {
   background-color: rgb(220, 220, 220) !important;

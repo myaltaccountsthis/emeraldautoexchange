@@ -3,7 +3,7 @@ function ListingsElement(props) {
   return (
     <div className="Listings-Element">
       <div className="Listings-Element-Container">
-        {[[item.year, item.make, item.model].join(" "), item.miles, item.condition, item.price].map(value => <div>{value}</div>)}
+        {[[item.year, item.make, item.model].join(" "), item.miles, item.condition, item.price].map((value, index) => <div key={index}>{value}</div>)}
       </div>
     </div>
   );

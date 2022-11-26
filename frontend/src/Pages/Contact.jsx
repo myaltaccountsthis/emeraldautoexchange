@@ -2,6 +2,12 @@ import React from 'react';
 import './Contact.css';
 
 class Contact extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.reasons = [ "I want to buy a car", "I want to sell my car", "Other (tell us in other comments)" ];
+  }
+
   onSubmit() {
 
     return false;
@@ -28,7 +34,8 @@ class Contact extends React.Component {
   render() {
     return (
       <div className="Page">
-        <div className="App-Header">Contact Us</div><br />
+        <div className="App-Header">Need Help?</div><br />
+        <div>Contact Us</div>
         <div className="Contact-Form-Container">
           <form className="Contact-Form" onSubmit={this.ons}>
             <div className="Contact-Form-Row">
@@ -51,9 +58,19 @@ class Contact extends React.Component {
                 <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" maxLength="12" onInput={this.forceDashes} required></input><br />
               </div>
             </div><br />
+            <div className="Contact-Form-Row">
+              <div className="Contact-Form-Row-Element">
+                <label htmlFor="reason" className="Contact-Form-Element">Reason</label><br />
+                <select name="reason" className="Contact-Form-Element" required>
+                  {
+                    this.reasons.map(reason => <option key={reason} value={reason}>{reason}</option>)
+                  }
+                </select>
+              </div>
+            </div><br />
             <div className="Contact-Form-Row-Element">
-              <label htmlFor="reason" className="Contact-Form-Element">Reason</label><br />
-              <textarea type="text" name="reason" className="Contact-Form-Element" maxLength="1000" placeholder="Please provide a reason" onInput={this.resizeTextArea} required></textarea><br />
+              <label htmlFor="comments" className="Contact-Form-Element">Other comments</label><br />
+              <textarea type="text" name="comments" className="Contact-Form-Element" maxLength="1000" placeholder="Anything you want us to know?" onInput={this.resizeTextArea}></textarea><br />
             </div><br />
             <br />
             <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>
