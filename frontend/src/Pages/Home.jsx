@@ -30,7 +30,7 @@ class Home extends React.Component {
           <div className="App-Secondary">Finer Cars for Finer People</div>
         </div>
         <br />
-        <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
+        <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", height: "600px" }}>
           <div className="Home-Image-Row">
             <button className="Home-Image-Arrow" onClick={() => this.changeImage(-1)}>
               <img src="arrowL.png" alt="Left"></img>
@@ -63,7 +63,7 @@ class Home extends React.Component {
           <br />
           <div className="Home-Founder-Holder">
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">John Doe</div>
+              <div className="Home-Founder-Title">Sahasrad Chippa</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -73,7 +73,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">John Doe</div>
+              <div className="Home-Founder-Title">Adam Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -83,7 +83,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">John Doe</div>
+              <div className="Home-Founder-Title">Ellison Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -93,7 +93,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">John Doe</div>
+              <div className="Home-Founder-Title">Aarush Singh</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
