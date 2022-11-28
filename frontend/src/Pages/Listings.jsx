@@ -12,8 +12,17 @@ class Listings extends React.Component {
       search: "",
       filter: "",
       filterMenu: false,
-      page: 0
+      page: 0,
+      selectedMake: "",
     };
+    this.models = {
+      "": [ "Select a Make" ],
+      "Chevrolet": [ "Malibu", "Equinox", "Tahoe", "Silverado", "Suburban" ],
+      "Ford": [ "Escape", "Bronco", "Explorer", "F-150", "Expedition" ],
+      "Honda": [ "CR-V", "Civic", "Accord", "Odyssey", "Pilot" ],
+      "Toyota": [ "Corolla", "Camry", "Prius", "Tacoma", "Highlander" ],
+    };
+    this.builds = [ "Car", "SUV", "Minivan", "Truck" ];
   }
 
   getListings() {
@@ -55,7 +64,24 @@ class Listings extends React.Component {
       return;
     return (
       <div className="Listings-Filter-Menu">
-        <br />
+        <div className="Listings-Filter-Row">
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="make" className="Listings-Filter-Element">Make</label><br />
+            <select name="make" className="Listings-Filter-Element" required>
+              {
+                Object.keys(this.models).map((make) => <option className="Listings-Filter-Element" key={make} value={make}>{make}</option>)
+              }
+            </select>
+          </div>
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="model" className="Listings-Filter-Element">Model</label><br />
+            <select name="model" className="Listings-Filter-Element" required>
+              {
+                this.models[this.state.selectedMake].map((model) => <option className="Listings-Filter-Element" key={model} value={model}>{model}</option>)
+              }
+            </select>
+          </div>
+        </div>
       </div>
     );
   }

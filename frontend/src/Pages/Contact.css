@@ -85,7 +85,7 @@ textarea.Contact-Form-Element {
     font-size: 18px;
   }
 
-  select.Contact-Form-Element, option.Contact-Form-Element {
+  label.Contact-Form-Element, select.Contact-Form-Element, option.Contact-Form-Element {
     font-size: 20px;
   }
 }

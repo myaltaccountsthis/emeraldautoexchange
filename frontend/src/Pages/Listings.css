@@ -105,13 +105,46 @@
 }
 
 .Listings-Filter-Menu {
-  display: flex;
   margin: auto;
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgb(192, 248, 215);
   max-width: 1000px;
   padding: 20px;
+}
+
+.Listings-Filter-Row {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.Listings-Filter-Row-Element {
+  margin: 0px 20px;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.Listings-Filter-Element {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+label.Listings-Filter-Element {
+  font-size: 18px;
+}
+
+input.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
+  border-radius: 12px;
+  border: 3px solid darkgreen;
+  padding: 5px 8px;
+  margin: 6px auto;
+  font-family: inherit;
+  font-size: 16px;
+  transition: border-radius .2s;
+}
+input.Listings-Filter-Element:focus {
+  border-radius: 8px;
 }
 
 @media screen and (min-width: 601px) {
@@ -127,5 +160,17 @@
   .Listings-Element {
     width: 33%;
     margin: 8px;
+  }
+
+  .Listings-Filter-Row {
+    flex-direction: row;
+  }
+  
+  input.Listings-Filter-Element {
+    font-size: 18px;
+  }
+
+  label.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
+    font-size: 20px;
   }
 }
