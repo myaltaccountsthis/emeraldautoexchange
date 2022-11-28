@@ -6,6 +6,7 @@ class SearchBar extends React.Component {
     super(props);
     this.state = { focused: false };
     this.onEnter = props.onEnter;
+    this.filterToggle = props.filterToggle;
   }
 
   onFocusEvent(bool) {
@@ -21,6 +22,9 @@ class SearchBar extends React.Component {
       <div className={this.getFocusedName("Search-Bar")}>
         <SearchIcon width="32px" height="32px" />
         <input className={this.getFocusedName("Search-Text")} type="text" onFocus={this.onFocusEvent(true)} onBlur={this.onFocusEvent(false)} onKeyUp={this.onEnter} />
+        <button className="Listings-Filter-Button" onClick={this.filterToggle}>
+          <img src="filter.svg" alt="Filter"></img>
+        </button>
       </div>
     );
   }

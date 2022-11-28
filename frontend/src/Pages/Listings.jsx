@@ -11,6 +11,7 @@ class Listings extends React.Component {
       focused: false,
       search: "",
       filter: "",
+      filterMenu: false,
       page: 0
     };
   }
@@ -49,14 +50,31 @@ class Listings extends React.Component {
     }
   }
 
+  getFilterMenu() {
+    if (!this.state.filterMenu)
+      return;
+    return (
+      <div className="Listings-Filter-Menu">
+        <br />
+      </div>
+    );
+  }
+
+  toggleFilterMenu() {
+    this.setState({ filterMenu: !this.state.filterMenu });
+  }
+
   render() {
     return (
       <div className="Page">
         <div className="App-Header">Our Inventory</div>
         <br />
-        <div style={{ marginBottom: "36px" }}>
-          <SearchBar onEnter={this.onEnter.bind(this)} />
+        <div style={{ marginBottom: "40px" }}>
+          <SearchBar onEnter={this.onEnter.bind(this)} filterToggle={this.toggleFilterMenu.bind(this)} />
         </div>
+        {
+          this.getFilterMenu()
+        }
         <div style={{ margin: "auto 20px" }}>
           <div className="Listings-Container">
             {

@@ -24,7 +24,7 @@ label.Contact-Form-Element {
   font-size: 18px;
 }
 
-input.Contact-Form-Element, textarea.Contact-Form-Element, select.Contact-Form-Element {
+input.Contact-Form-Element, textarea.Contact-Form-Element, select.Contact-Form-Element, option.Contact-Form-Element {
   border-radius: 12px;
   border: 3px solid darkgreen;
   padding: 5px 8px;
@@ -41,9 +41,6 @@ textarea.Contact-Form-Element {
   resize: none;
   min-height: 72px;
   overflow: hidden;
-}
-select.Contact-Form-Element {
-  font-size: 20px;
 }
 
 .Contact-Form-Container {
@@ -86,5 +83,9 @@ select.Contact-Form-Element {
   
   input.Contact-Form-Element, textarea.Contact-Form-Element {
     font-size: 18px;
+  }
+
+  select.Contact-Form-Element, option.Contact-Form-Element {
+    font-size: 20px;
   }
 }

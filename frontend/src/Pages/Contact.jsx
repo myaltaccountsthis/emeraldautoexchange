@@ -5,7 +5,7 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
 
-    this.reasons = [ "I want to buy a car", "I want to sell my car", "Other (tell us in other comments)" ];
+    this.reasons = [ "I want to buy a car", "I want to sell my car", "I want to exchange my car", "Other (tell us in other comments)" ];
   }
 
   onSubmit() {
@@ -63,7 +63,7 @@ class Contact extends React.Component {
                 <label htmlFor="reason" className="Contact-Form-Element">Reason</label><br />
                 <select name="reason" className="Contact-Form-Element" required>
                   {
-                    this.reasons.map(reason => <option key={reason} value={reason}>{reason}</option>)
+                    this.reasons.map(reason => <option className="Contact-Form-Element" key={reason} value={reason}>{reason}</option>)
                   }
                 </select>
               </div>

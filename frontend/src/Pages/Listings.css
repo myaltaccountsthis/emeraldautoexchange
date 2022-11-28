@@ -8,7 +8,7 @@
   flex-direction: row;
   align-items: center;
 
-  border: 2px solid rgb(77, 158, 77);
+  border: 3px solid rgb(77, 158, 77);
   border-radius: 20px;
   overflow: hidden;
 
@@ -39,7 +39,7 @@
   box-sizing: border-box;
   max-width: 1200px;
   text-align: center;
-  border-radius: 8px;
+  border-radius: 10px;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 12px;
@@ -51,13 +51,13 @@
   font-size: larger;
   text-align: center;
   background-color: white;
-  border-radius: 6px;
+  border-radius: 10px;
   padding: 8px;
 }
 
 .Listings-Element {
   box-sizing: border-box;
-  border-radius: 6px;
+  border-radius: 10px;
   background-color: white;
   padding: 8px;
   width: 100%;
@@ -89,6 +89,29 @@
 .Listings-Nav-Button {
   box-sizing: border-box;
   padding: 0px 3px;
+}
+
+.Listings-Filter-Button {
+  background-color: transparent;
+  border: 0px;
+  width: 48px;
+  height: 48px;
+  transition: background-color .15s;
+}
+
+.Listings-Filter-Button:hover {
+  background-color: rgba(64, 64, 64, .2);
+  cursor: pointer;
+}
+
+.Listings-Filter-Menu {
+  display: flex;
+  margin: auto;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  background-color: rgb(192, 248, 215);
+  max-width: 1000px;
+  padding: 20px;
 }
 
 @media screen and (min-width: 601px) {
