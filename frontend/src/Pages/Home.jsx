@@ -1,5 +1,7 @@
 import React from 'react';
 import './Home.css';
+import {ReactComponent as ArrowL} from '../arrowL.svg';
+import {ReactComponent as ArrowR} from '../arrowR.svg';
 
 class Home extends React.Component {
   constructor(props) {
@@ -33,11 +35,11 @@ class Home extends React.Component {
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", height: "600px" }}>
           <div className="Home-Image-Row">
             <button className="Home-Image-Arrow" onClick={() => this.changeImage(-1)}>
-              <img src="arrowL.png" alt="Left"></img>
+              <ArrowL />
             </button>
             <img src={this.images[this.state.currentImage]} alt="Car"></img>
             <button className="Home-Image-Arrow" onClick={() => this.changeImage(1)}>
-              <img src="arrowR.png" alt="Right"></img>
+              <ArrowR />
             </button>
           </div>
           <div>

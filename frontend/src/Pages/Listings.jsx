@@ -2,6 +2,8 @@ import React from 'react';
 import ListingsElement from '../Components/ListingsElement';
 import SearchBar from '../Components/SearchBar';
 import './Listings.css';
+import {ReactComponent as ArrowL} from '../arrowL.svg';
+import {ReactComponent as ArrowR} from '../arrowR.svg';
 
 class Listings extends React.Component {
   constructor(props) {
@@ -17,10 +19,10 @@ class Listings extends React.Component {
     };
     this.models = {
       "": [ "Select a Make" ],
-      "Chevrolet": [ "Malibu", "Equinox", "Tahoe", "Silverado", "Suburban" ],
-      "Ford": [ "Escape", "Bronco", "Explorer", "F-150", "Expedition" ],
-      "Honda": [ "CR-V", "Civic", "Accord", "Odyssey", "Pilot" ],
-      "Toyota": [ "Corolla", "Camry", "Prius", "Tacoma", "Highlander" ],
+      "Chevrolet": [ "Equinox", "Malibu", "Silverado", "Suburban", "Tahoe" ],
+      "Ford": [ "Bronco", "Escape", "Expedition", "Explorer", "F-150" ],
+      "Honda": [ "Accord", "Civic", "CR-V", "Odyssey", "Pilot" ],
+      "Toyota": [ "Camry", "Corolla", "Highlander", "Prius", "Tacoma" ],
     };
     this.builds = [ "Car", "SUV", "Minivan", "Truck" ];
   }
@@ -59,6 +61,10 @@ class Listings extends React.Component {
     }
   }
 
+  updateModel(event) {
+    this.setState({ selectedMake: event.target.value });
+  }
+
   getFilterMenu() {
     if (!this.state.filterMenu)
       return;
@@ -67,9 +73,9 @@ class Listings extends React.Component {
         <div className="Listings-Filter-Row">
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="make" className="Listings-Filter-Element">Make</label><br />
-            <select name="make" className="Listings-Filter-Element" required>
+            <select name="make" className="Listings-Filter-Element" onChange={this.updateModel.bind(this)} required>
               {
-                Object.keys(this.models).map((make) => <option className="Listings-Filter-Element" key={make} value={make}>{make}</option>)
+                Object.keys(this.models).map(make => <option className="Listings-Filter-Element" key={make} value={make}>{make}</option>)
               }
             </select>
           </div>
@@ -77,7 +83,15 @@ class Listings extends React.Component {
             <label htmlFor="model" className="Listings-Filter-Element">Model</label><br />
             <select name="model" className="Listings-Filter-Element" required>
               {
-                this.models[this.state.selectedMake].map((model) => <option className="Listings-Filter-Element" key={model} value={model}>{model}</option>)
+                this.models[this.state.selectedMake].map(model => <option className="Listings-Filter-Element" key={model} value={model}>{model}</option>)
+              }
+            </select>
+          </div>
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="build" className="Listings-Filter-Element">Build</label><br />
+            <select name="build" className="Listings-Filter-Element" required>
+              {
+                this.builds.map(build => <option className="Listings-Filter-Element" key={build} value={build}>{build}</option>)
               }
             </select>
           </div>
@@ -108,9 +122,13 @@ class Listings extends React.Component {
             }
           </div>
           <div className="Listings-Nav-Container">
-            <button className="Listings-Nav-Button">L</button>
+            <button className="Listings-Nav-Button">
+              <ArrowL />
+            </button>
             <div>1 ... 3 4 5 ... 10</div>
-            <button className="Listings-Nav-Button">R</button>
+            <button className="Listings-Nav-Button">
+              <ArrowR />
+            </button>
           </div>
         </div>
       </div>

@@ -33,6 +33,19 @@
   font-size: 20px;
 }
 
+.Search-Button {
+  background-color: transparent;
+  border: 0px;
+  width: 48px;
+  height: 48px;
+  transition: background-color .15s;
+}
+
+.Search-Button:hover {
+  background-color: rgba(64, 64, 64, .2);
+  cursor: pointer;
+}
+
 .Listings-Container {
   display: flex;
   margin: auto;
@@ -87,8 +100,21 @@
 }
 
 .Listings-Nav-Button {
+  background-color: transparent;
+  border: 0px;
   box-sizing: border-box;
-  padding: 0px 3px;
+  color :black;
+  transition: background-color .15s;
+}
+.Listings-Nav-Button:hover {
+  background-color: rgba(64, 64, 64, .2);
+  cursor: pointer;
+}
+
+.Listings-Nav-Button > svg {
+  width: 20px;
+  height: 24px;
+  filter: invert(1)
 }
 
 .Listings-Filter-Button {

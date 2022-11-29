@@ -1,5 +1,6 @@
 import React from 'react';
 import {ReactComponent as SearchIcon} from '../magnifying-glass.svg';
+import {ReactComponent as FilterIcon} from '../filter.svg';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -20,10 +21,12 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className={this.getFocusedName("Search-Bar")}>
-        <SearchIcon width="32px" height="32px" />
+        <button className="Search-Button" onClick={this.onEnter}>
+          <SearchIcon width="32px" height="32px" />
+        </button>
         <input className={this.getFocusedName("Search-Text")} type="text" onFocus={this.onFocusEvent(true)} onBlur={this.onFocusEvent(false)} onKeyUp={this.onEnter} />
         <button className="Listings-Filter-Button" onClick={this.filterToggle}>
-          <img src="filter.svg" alt="Filter"></img>
+          <FilterIcon padding="0px" />
         </button>
       </div>
     );
