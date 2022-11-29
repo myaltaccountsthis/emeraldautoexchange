@@ -1,15 +1,18 @@
 {
   "files": {
-    "main.css": "/emeraldautoexchange/static/css/main.e5c8814c.css",
-    "main.js": "/emeraldautoexchange/static/js/main.d41e8850.js",
+    "main.css": "/emeraldautoexchange/static/css/main.288389b2.css",
+    "main.js": "/emeraldautoexchange/static/js/main.38a00c9a.js",
     "static/media/emerald.svg": "/emeraldautoexchange/static/media/emerald.92380c7db640254c5126818bd08aef6c.svg",
-    "static/media/magnifying-glass.svg": "/emeraldautoexchange/static/media/magnifying-glass.9ed73ca1f7df9ef79e99e0286bde2dba.svg",
+    "static/media/arrowL.svg": "/emeraldautoexchange/static/media/arrowL.38f1a4068e563225ff31a22031b2d7d5.svg",
+    "static/media/arrowR.svg": "/emeraldautoexchange/static/media/arrowR.d34f792f7277075f56fed1bd2d240deb.svg",
+    "static/media/magnifying-glass.svg": "/emeraldautoexchange/static/media/magnifying-glass.65ecd66a2fa1202d1b27e1092513725d.svg",
     "index.html": "/emeraldautoexchange/index.html",
-    "main.e5c8814c.css.map": "/emeraldautoexchange/static/css/main.e5c8814c.css.map",
-    "main.d41e8850.js.map": "/emeraldautoexchange/static/js/main.d41e8850.js.map"
+    "static/media/filter.svg": "/emeraldautoexchange/static/media/filter.5e9b18e618a5d30101dfcab512f82ca5.svg",
+    "main.288389b2.css.map": "/emeraldautoexchange/static/css/main.288389b2.css.map",
+    "main.38a00c9a.js.map": "/emeraldautoexchange/static/js/main.38a00c9a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e5c8814c.css",
-    "static/js/main.d41e8850.js"
+    "static/css/main.288389b2.css",
+    "static/js/main.38a00c9a.js"
   ]
 }
