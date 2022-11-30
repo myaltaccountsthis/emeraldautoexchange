@@ -41,21 +41,21 @@ class Contact extends React.Component {
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="fname" className="Contact-Form-Element">First Name</label><br />
-                <input type="text" name="fname" className="Contact-Form-Element" placeholder="John" minLength="4" maxLength="20" required></input><br />
+                <input type="text" name="fname" className="Contact-Form-Element" placeholder="John" minLength="4" maxLength="20" required /><br />
               </div>
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="lname" className="Contact-Form-Element">Last Name</label><br />
-                <input type="text" name="lname" className="Contact-Form-Element" placeholder="Doe" maxLength="20" required></input><br />
+                <input type="text" name="lname" className="Contact-Form-Element" placeholder="Doe" maxLength="20" required /><br />
               </div>
             </div><br />
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="email" className="Contact-Form-Element">Email</label><br />
-                <input type="email" name="email" className="Contact-Form-Element" placeholder="johndoe@gmail.com" required></input><br />
+                <input type="email" name="email" className="Contact-Form-Element" placeholder="johndoe@gmail.com" required /><br />
               </div>
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="phone" className="Contact-Form-Element">Phone</label><br />
-                <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" maxLength="12" onInput={this.forceDashes} required></input><br />
+                <input type="tel" name="phone" className="Contact-Form-Element" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="123-456-7890" maxLength="12" onInput={this.forceDashes} required /><br />
               </div>
             </div><br />
             <div className="Contact-Form-Row">
@@ -70,7 +70,7 @@ class Contact extends React.Component {
             </div><br />
             <div className="Contact-Form-Row-Element">
               <label htmlFor="comments" className="Contact-Form-Element">Other comments</label><br />
-              <textarea type="text" name="comments" className="Contact-Form-Element" maxLength="1000" placeholder="Anything you want us to know?" onInput={this.resizeTextArea}></textarea><br />
+              <textarea type="text" name="comments" className="Contact-Form-Element" maxLength="1000" placeholder="Anything you want us to know?" onInput={this.resizeTextArea} /><br />
             </div><br />
             <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>
           </form>

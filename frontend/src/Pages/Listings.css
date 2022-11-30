@@ -130,19 +130,24 @@
   cursor: pointer;
 }
 
+.Listings-Filter-Outer {
+  padding: 0px 40px;
+}
+
 .Listings-Filter-Menu {
-  margin: auto;
+  margin: 0px auto;
+  
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgb(192, 248, 215);
-  max-width: 1000px;
-  padding: 20px;
+  max-width: 300px;
+  padding: 10px;
 }
 
 .Listings-Filter-Row {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 10px auto;
 }
 
 .Listings-Filter-Row-Element {
@@ -188,15 +193,15 @@ input.Listings-Filter-Element:focus {
     margin: 8px;
   }
 
+  .Listings-Filter-Menu {
+    max-width: 800px;
+  }
+
   .Listings-Filter-Row {
     flex-direction: row;
   }
-  
-  input.Listings-Filter-Element {
-    font-size: 18px;
-  }
 
-  label.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
+  input.Listings-Filter-Element, label.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
     font-size: 20px;
   }
 }

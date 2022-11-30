@@ -24,7 +24,7 @@ class Listings extends React.Component {
       "Honda": [ "Accord", "Civic", "CR-V", "Odyssey", "Pilot" ],
       "Toyota": [ "Camry", "Corolla", "Highlander", "Prius", "Tacoma" ],
     };
-    this.builds = [ "Car", "SUV", "Minivan", "Truck" ];
+    this.builds = [ "", "Car", "SUV", "Minivan", "Truck" ];
   }
 
   getListings() {
@@ -65,6 +65,10 @@ class Listings extends React.Component {
     this.setState({ selectedMake: event.target.value });
   }
 
+  onInput(event) {
+    
+  }
+
   getFilterMenu() {
     if (!this.state.filterMenu)
       return;
@@ -96,6 +100,20 @@ class Listings extends React.Component {
             </select>
           </div>
         </div>
+        <div className="Listings-Filter-Row">
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="year" className="Listings-Filter-Element">Year</label><br />
+            <input type="year" name="year" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+          </div>
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="mile" className="Listings-Filter-Element">Mile</label><br />
+            <input type="mile" name="mile" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+          </div>
+          <div className="Listings-Filter-Row-Element">
+            <label htmlFor="price" className="Listings-Filter-Element">Price</label><br />
+            <input type="price" name="price" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+          </div>
+        </div>
       </div>
     );
   }
@@ -112,9 +130,11 @@ class Listings extends React.Component {
         <div style={{ marginBottom: "40px" }}>
           <SearchBar onEnter={this.onEnter.bind(this)} filterToggle={this.toggleFilterMenu.bind(this)} />
         </div>
-        {
-          this.getFilterMenu()
-        }
+        <div className="Listings-Filter-Outer">
+          {
+            this.getFilterMenu()
+          }
+        </div>
         <div style={{ margin: "auto 20px" }}>
           <div className="Listings-Container">
             {
