@@ -140,19 +140,19 @@
   margin-bottom: 40px;
   border-radius: 10px;
   background-color: rgb(192, 248, 215);
-  max-width: 300px;
+  max-width: 400px;
   padding: 10px;
 }
 
 .Listings-Filter-Row {
   display: flex;
   flex-direction: column;
-  margin: 10px auto;
+  margin: 20px auto;
 }
 
 .Listings-Filter-Row-Element {
   margin: 0px 20px;
-  flex-grow: 1;
+  flex: 1 1 0;
   text-align: left;
 }
 
@@ -162,7 +162,12 @@
 }
 
 label.Listings-Filter-Element {
-  font-size: 18px;
+  font-size: 20px;
+  margin: auto;
+}
+
+h.Listings-Filter-Element {
+  font-size: 16px;
 }
 
 input.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
@@ -178,7 +183,17 @@ input.Listings-Filter-Element:focus {
   border-radius: 8px;
 }
 
-@media screen and (min-width: 601px) {
+.Listings-Filter-Compare-Row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.Listings-Filter-Set {
+  max-width: 45%;
+}
+
+@media screen and (min-width: 721px) {
   .Listings-Container {
     flex-direction: row;
     padding: 20px;
@@ -194,7 +209,7 @@ input.Listings-Filter-Element:focus {
   }
 
   .Listings-Filter-Menu {
-    max-width: 800px;
+    max-width: 1000px;
   }
 
   .Listings-Filter-Row {
@@ -202,6 +217,10 @@ input.Listings-Filter-Element:focus {
   }
 
   input.Listings-Filter-Element, label.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
+    font-size: 24px;
+  }
+
+  h.Listings-Filter-Element {
     font-size: 20px;
   }
 }

@@ -66,17 +66,18 @@
 
 .Home-Founder-Holder {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
+  column-gap: 20px;
 }
 
 .Home-Founder-Column {
-  flex: 0 1 auto;
-  max-width: 400px;
+  flex: auto;
+  margin: 0px auto 50px auto;
 }
 
 .Home-Founder-Title {
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .Home-Founder-Image {
@@ -92,11 +93,21 @@
   .Home-About-Text {
     font-size: 20px;
     width: 70%;
+    margin: auto;
   }
 
   .Home-Founder-Title {
-    font-size: 24px;
+    font-size: 28px;
   }
+
+  .Home-Founder-Holder {
+    flex-direction: row;
+  }
+
+  .Home-Founder-Column {
+    margin: auto;
+  }
+
 }
 
 @media screen and (min-width: 721px) {
@@ -110,6 +121,6 @@
   }
 
   .Home-Founder-Title {
-    font-size: 28px;
+    font-size: 32px;
   }
 }

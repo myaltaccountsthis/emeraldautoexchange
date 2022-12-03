@@ -51,7 +51,8 @@ input, textarea {
 }
 .App-Nav-Element:hover {
   cursor: pointer;
-  color: rgb(80, 80, 80);
+  color: cornflowerblue;
+  
 }
 .App-Nav-Element:active {
   color: cornflowerblue;
