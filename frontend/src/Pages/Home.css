@@ -96,7 +96,7 @@
     margin: auto;
   }
 
-  .Home-Founder-Title {
+  .Home-Semi-Header {
     font-size: 24px;
   }
 
@@ -112,7 +112,11 @@
     width: 60%;
   }
 
-  .Home-Founder-Title {
+  .Home-Semi-Header {
     font-size: 28px;
+  }
+  
+  .Home-Founder-Holder {
+    flex-direction: row;
   }
 }
