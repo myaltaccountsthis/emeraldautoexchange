@@ -18,11 +18,11 @@ class Listings extends React.Component {
       selectedMake: "",
     };
     this.models = {
-      "": [ "Select a Make" ],
-      "Chevrolet": [ "Equinox", "Malibu", "Silverado", "Suburban", "Tahoe" ],
-      "Ford": [ "Bronco", "Escape", "Expedition", "Explorer", "F-150" ],
-      "Honda": [ "Accord", "Civic", "CR-V", "Odyssey", "Pilot" ],
-      "Toyota": [ "Camry", "Corolla", "Highlander", "Prius", "Tacoma" ],
+      "": [ "" ],
+      "Chevrolet": [ "", "Equinox", "Malibu", "Silverado", "Suburban", "Tahoe" ],
+      "Ford": [ "", "Bronco", "Escape", "Expedition", "Explorer", "F-150" ],
+      "Honda": [ "", "Accord", "Civic", "CR-V", "Odyssey", "Pilot" ],
+      "Toyota": [ "", "Camry", "Corolla", "Highlander", "Prius", "Tacoma" ],
     };
     this.builds = [ "", "Car", "SUV", "Minivan", "Truck" ];
   }
@@ -103,15 +103,42 @@ class Listings extends React.Component {
         <div className="Listings-Filter-Row">
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="year" className="Listings-Filter-Element">Year</label><br />
-            <input type="year" name="year" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+            <div className="Listings-Filter-Compare-Row">
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Min</h>
+                <input type="text" name="minyear" className="Listings-Filter-Element" required /><br />
+              </div>
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Max</h>
+                <input type="text" name="maxyear" className="Listings-Filter-Element" required /><br />
+              </div>
+            </div>
           </div>
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="mile" className="Listings-Filter-Element">Mile</label><br />
-            <input type="mile" name="mile" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+            <div className="Listings-Filter-Compare-Row">
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Min</h>
+                <input type="text" name="minmile" className="Listings-Filter-Element" required /><br />
+              </div>
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Max</h>
+                <input type="text" name="maxmile" className="Listings-Filter-Element" required /><br />
+              </div>
+            </div>
           </div>
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="price" className="Listings-Filter-Element">Price</label><br />
-            <input type="price" name="price" className="Listings-Filter-Element" placeholder="_<_" required /><br />
+            <div className="Listings-Filter-Compare-Row">
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Min</h>
+                <input type="text" name="minprice" className="Listings-Filter-Element" required /><br />
+              </div>
+              <div className="Listings-Filter-Set">
+                <h className="Listings-Filter-Element">Max</h>
+                <input type="text" name="maxprice" className="Listings-Filter-Element" required /><br />
+              </div>
+            </div>
           </div>
         </div>
       </div>

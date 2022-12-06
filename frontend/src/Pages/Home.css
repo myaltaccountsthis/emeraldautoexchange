@@ -66,13 +66,14 @@
 
 .Home-Founder-Holder {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-evenly;
+  column-gap: 20px;
 }
 
 .Home-Founder-Column {
-  flex: 0 1 auto;
-  max-width: 400px;
+  flex: auto;
+  margin: 0px auto 50px auto;
 }
 
 .Home-Semi-Header {
@@ -92,11 +93,13 @@
   .Home-About-Text {
     font-size: 20px;
     width: 70%;
+    margin: auto;
   }
 
-  .Home-Semi-Header {
+  .Home-Founder-Title {
     font-size: 24px;
   }
+
 }
 
 @media screen and (min-width: 721px) {
@@ -109,7 +112,7 @@
     width: 60%;
   }
 
-  .Home-Semi-Header {
+  .Home-Founder-Title {
     font-size: 28px;
   }
 }
