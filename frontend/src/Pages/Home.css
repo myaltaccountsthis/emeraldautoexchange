@@ -75,7 +75,7 @@
   max-width: 400px;
 }
 
-.Home-Founder-Title {
+.Home-Semi-Header {
   font-size: 20px;
 }
 
@@ -94,7 +94,7 @@
     width: 70%;
   }
 
-  .Home-Founder-Title {
+  .Home-Semi-Header {
     font-size: 24px;
   }
 }
@@ -109,7 +109,7 @@
     width: 60%;
   }
 
-  .Home-Founder-Title {
+  .Home-Semi-Header {
     font-size: 28px;
   }
 }

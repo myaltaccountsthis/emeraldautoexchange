@@ -65,7 +65,7 @@ class Home extends React.Component {
           <br />
           <div className="Home-Founder-Holder">
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">Sahasrad Chippa</div>
+              <div className="Home-Semi-Header">Sahasrad Chippa</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -75,7 +75,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">Adam Zhu</div>
+              <div className="Home-Semi-Header">Adam Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -85,7 +85,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">Ellison Zhu</div>
+              <div className="Home-Semi-Header">Ellison Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -95,7 +95,7 @@ class Home extends React.Component {
               </div>
             </div>
             <div className="Home-Founder-Column">
-              <div className="Home-Founder-Title">Aarush Singh</div>
+              <div className="Home-Semi-Header">Aarush Singh</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -108,7 +108,6 @@ class Home extends React.Component {
           <br />
         </div>
         <div className="Info-Row">
-
         </div>
       </div>
     );
