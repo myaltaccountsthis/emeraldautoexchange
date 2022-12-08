@@ -22,7 +22,7 @@ class Listings extends React.Component {
       "Chevrolet": [ "", "Equinox", "Malibu", "Silverado", "Suburban", "Tahoe" ],
       "Ford": [ "", "Bronco", "Escape", "Expedition", "Explorer", "F-150" ],
       "Honda": [ "", "Accord", "Civic", "CR-V", "Odyssey", "Pilot" ],
-      "Toyota": [ "", "Camry", "Corolla", "Highlander", "Prius", "Tacoma" ],
+      "Toyota": [ "", "Camry", "Corolla", "Highlander", "Sienna", "Tacoma" ],
     };
     this.builds = [ "", "Car", "SUV", "Minivan", "Truck" ];
   }

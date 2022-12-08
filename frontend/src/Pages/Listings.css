@@ -176,7 +176,7 @@ input.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-F
   padding: 5px 8px;
   margin: 6px auto;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 20px;
   transition: border-radius .2s;
 }
 input.Listings-Filter-Element:focus {
@@ -216,7 +216,7 @@ input.Listings-Filter-Element:focus {
     flex-direction: row;
   }
 
-  input.Listings-Filter-Element, label.Listings-Filter-Element, select.Listings-Filter-Element, option.Listings-Filter-Element {
+  label.Listings-Filter-Element {
     font-size: 24px;
   }
 

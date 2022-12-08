@@ -50,22 +50,49 @@ class Home extends React.Component {
         </div>
         <div className="Info-Row">
           <br />
-          <div className="App-Header">About Us</div>
+          <div className="Home-About-Holder">
+            <div className="App-Header">About Us</div>
+            <br />
+            <div className="Home-About-Text">
+              Emerald Auto Exchange was created to give customers used cars for the price they are worth.
+              Since we started the company, we have always strived to keep prices fair for our many cars of various conditions.
+              Our wide selection of used cars will ensure that you can find the right car for the right price.
+              <br />
+            </div>
+          </div>
           <br />
-          <div className="Home-About-Text">
-            Emerald Auto Exchange was created to give customers used cars for the price they are worth.
-            Since we started the company, we have always strived to keep prices fair for our many cars of various conditions.
-            Our wide selection of used cars will ensure that you can find the right car for the right price.
+          <div className="Home-Flex-Row">
+            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+              <div className="App-Secondary">Affordable</div>
+              <br />
+              <div className="Home-About-Text">
+                We offer cars that are affordable, ensuring that everyone can buy the right car.
+              </div>
+            </div>
+            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+              <div className="App-Secondary">Quality</div>
+              <br />
+              <div className="Home-About-Text">
+                Our selection includes the highest quality used cars in the market.
+              </div>
+            </div>
+            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+              <div className="App-Secondary">Easy</div>
+              <br />
+              <div className="Home-About-Text">
+                We have the easiest way to search for used cars with simple filtering options.
+              </div>
+            </div>
           </div>
           <br />
         </div>
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
           <br />
           <div className="App-Header">The Founders</div>
-          <br />
-          <div className="Home-Founder-Holder">
-            <div className="Home-Founder-Column">
-              <div className="Home-Semi-Header">Sahasrad Chippa</div>
+          <br /><br />
+          <div className="Home-Flex-Row">
+            <div className="Home-Column">
+              <div className="App-Secondary">Sahasrad Chippa</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -74,8 +101,8 @@ class Home extends React.Component {
                 He always wanted to become a car dealer when he grew up.
               </div>
             </div>
-            <div className="Home-Founder-Column">
-              <div className="Home-Semi-Header">Adam Zhu</div>
+            <div className="Home-Column">
+              <div className="App-Secondary">Adam Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -84,8 +111,8 @@ class Home extends React.Component {
                 He always wanted to become a car dealer when he grew up.
               </div>
             </div>
-            <div className="Home-Founder-Column">
-              <div className="Home-Semi-Header">Ellison Zhu</div>
+            <div className="Home-Column">
+              <div className="App-Secondary">Ellison Zhu</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
@@ -94,8 +121,8 @@ class Home extends React.Component {
                 He always wanted to become a car dealer when he grew up.
               </div>
             </div>
-            <div className="Home-Founder-Column">
-              <div className="Home-Semi-Header">Aarush Singh</div>
+            <div className="Home-Column">
+              <div className="App-Secondary">Aarush Singh</div>
               <br />
               <img src="" alt="John Doe" className="Home-Founder-Image"></img>
               <br />
