@@ -28,9 +28,9 @@ public class MainController {
         Specification<Vehicle> spec = ((root, criteriaQuery, criteriaBuilder) -> {
             List<Predicate> predicates = new ArrayList<>();
 
-            makes.ifPresent(s -> predicates.add(root.get("make").in(Arrays.asList(makes.get().split(",")))));
-            models.ifPresent(s -> predicates.add(root.get("model").in(Arrays.asList(models.get().split(",")))));
-            builds.ifPresent(s -> predicates.add(root.get("build").in(Arrays.asList(builds.get().split(",")))));
+            makes.ifPresent(s -> predicates.add(criteriaBuilder.lower(root.get("make")).in(Arrays.asList(makes.get().toLowerCase().split(",")))));
+            models.ifPresent(s -> predicates.add(criteriaBuilder.lower(root.get("model")).in(Arrays.asList(models.get().toLowerCase().split(",")))));
+            builds.ifPresent(s -> predicates.add(criteriaBuilder.lower(root.get("build")).in(Arrays.asList(builds.get().toLowerCase().split(",")))));
             years.ifPresent(s -> predicates.add(root.get("year").in(Arrays.asList(years.get().split(",")))));
 
             minYear.ifPresent(p -> predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get("year"), minYear.get())));
