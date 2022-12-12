@@ -12,7 +12,7 @@ import java.util.List;
 public interface VehicleRepository extends JpaRepository<Vehicle, Integer> {
     List<String> columns = Arrays.stream(Vehicle.class.getFields()).map(Field::getName).toList();
 
-    public default List<String> getColumns() { return columns; }
+    default List<String> getColumns() { return columns; }
 
     Page<Vehicle> findAll(Specification<Vehicle> specification, Pageable pageable);
 }
