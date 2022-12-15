@@ -4,6 +4,7 @@ import SearchBar from '../Components/SearchBar';
 import './Listings.css';
 import {ReactComponent as ArrowL} from '../arrowL.svg';
 import {ReactComponent as ArrowR} from '../arrowR.svg';
+import NavThreeDots from '../Components/NavThreeDots';
 
 class Listings extends React.Component {
   constructor(props) {
@@ -11,11 +12,8 @@ class Listings extends React.Component {
 
     this.state = {
       focused: false,
-      search: "",
-      filter: "",
-      filterMenu: false,
-      page: 0,
       selectedMake: "",
+      data: null
     };
     this.models = {
       "": [ "" ],
@@ -25,59 +23,111 @@ class Listings extends React.Component {
       "Toyota": [ "", "Camry", "Corolla", "Highlander", "Sienna", "Tacoma" ],
     };
     this.builds = [ "", "Car", "SUV", "Minivan", "Truck" ];
+    // how many pages from the current page to show numbers for (e.g. if page = 5 and pageNumberExtent = 2, show 1 ... 3 4 5 6 7 ... total)
+    this.pageNumberExtent = 2;
+    this.filterIds = [ "makes", "models", "builds", "min_year", "max_year", "min_miles", "max_miles", "min_price", "max_price" ];
+
+    // search info
+    this.search = "";
+    this.filter = "";
+    this.currentQuery = null;
+    this.page = 0;
+    this.totalPages = 0;
+    this.itemsPerPage = 30;
   }
 
-  getListings() {
+  componentDidMount() {
+    this.getListings();
+    this.toggleFilterMenu(false);
+  }
+
+  updateFilter() {
+    this.filter = this.filterIds.map(id => document.getElementById(id)).filter(element => element.value.length > 0).map(element => element.id + "=" + element.value).join("&");
+  }
+
+  // will set data to null when fetching, then set data
+  // will also set currentQuery
+  // basically an update method for the search
+  async getListings(keepNav) {
     // TODO change this
     // TODO need filter on right side of Search-Text inside the Search-Bar flexbox
     // TODO loading three dots
-    // const matches = [];
-    let matches = [
-      {
-        year: "2003",
-        make: "ford",
-        model: "f150",
-        miles: 39273,
-        condition: 4,
-        price: 13432
-      }
-    ];
-    matches = matches.map(item => {
-      item.name = [item.year, item.make, item.model].join(" ");
-      item.key = [item.name, item.miles].join(" ");
-      return item;
-    }).filter(item => item.name.toLowerCase().includes(this.state.search));
+    
+    // query for this.currentQuery to compare
+    // placeholder for now
+    let query = "http://localhost:8080/inventory?query=" + this.search + "&page=" + (this.page + 1) + "&count=" + this.itemsPerPage;
+    this.updateFilter();
+    if (this.filter.length > 0)
+      query += "&" + this.filter;
+    query = encodeURI(query);
+    if (query === this.currentQuery)
+      return;
 
-    if (matches.length === 0)
-      return (
-        <div className="Listings-None">There are no cars that match your search</div>
-      );
-    return matches.map(item => <ListingsElement key={item.key} item={item} />);
+    this.currentQuery = query;
+    console.log(query);
+    if (!keepNav)
+      this.totalPages = 0;
+    this.setState({ data: null });
+    
+    let data;
+    try {
+      const response = JSON.parse(await ((await fetch(query).catch("Failed to load data")).text()));
+      this.totalPages = response.totalPages;
+
+      let matches = response.data;
+      matches = matches.map((item, index) => {
+        item.name = [item.year, item.make, item.model].join(" ");
+        item.key = [item.name, item.miles, index].join(" ");
+        return item;
+      });
+
+      if (matches.length === 0) {
+        this.page = 0;
+        data = (
+          <div className="Listings-None">There are no cars that match your search</div>
+        );
+      }
+      else {
+        data = matches.map(item => <ListingsElement key={item.key} item={item} />);
+      }
+    }
+    catch (e) {
+      data = <div className="Listings-None">Error loading data.</div>
+    }
+    
+    if (query === this.currentQuery)
+      this.setState({ data: data });
   }
 
   onEnter(event) {
     if (event.key === "Enter") {
-      this.setState({ search: event.target.value.toLowerCase() });
+      this.search = event.target.value.toLowerCase();
+      this.newSearch();
     }
   }
 
+  newSearch() {
+    this.page = 0;
+    this.getListings();
+  }
+
   updateModel(event) {
+    this.newSearch();
     this.setState({ selectedMake: event.target.value });
   }
 
-  onInput(event) {
-    
+  onFilterInput(event) {
+    const target = event.target;
+    target.value = target.value.replaceAll(/[^0-9]/g, "");
   }
 
   getFilterMenu() {
-    if (!this.state.filterMenu)
-      return;
     return (
       <div className="Listings-Filter-Menu">
         <div className="Listings-Filter-Row">
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="make" className="Listings-Filter-Element">Make</label><br />
-            <select name="make" className="Listings-Filter-Element" onChange={this.updateModel.bind(this)} required>
+            <select id="makes" name="make" className="Listings-Filter-Element" onChange={this.updateModel.bind(this)} required>
               {
                 Object.keys(this.models).map(make => <option className="Listings-Filter-Element" key={make} value={make}>{make}</option>)
               }
@@ -85,7 +135,7 @@ class Listings extends React.Component {
           </div>
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="model" className="Listings-Filter-Element">Model</label><br />
-            <select name="model" className="Listings-Filter-Element" required>
+            <select id="models" name="model" className="Listings-Filter-Element" onChange={this.newSearch.bind(this)} required>
               {
                 this.models[this.state.selectedMake].map(model => <option className="Listings-Filter-Element" key={model} value={model}>{model}</option>)
               }
@@ -93,7 +143,7 @@ class Listings extends React.Component {
           </div>
           <div className="Listings-Filter-Row-Element">
             <label htmlFor="build" className="Listings-Filter-Element">Build</label><br />
-            <select name="build" className="Listings-Filter-Element" required>
+            <select id="builds" name="build" className="Listings-Filter-Element" onChange={this.newSearch.bind(this)} required>
               {
                 this.builds.map(build => <option className="Listings-Filter-Element" key={build} value={build}>{build}</option>)
               }
@@ -105,25 +155,25 @@ class Listings extends React.Component {
             <label htmlFor="year" className="Listings-Filter-Element">Year</label><br />
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Min</h>
-                <input type="text" name="minyear" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Min</div>
+                <input type="text" id="min_year" name="minyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Max</h>
-                <input type="text" name="maxyear" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Max</div>
+                <input type="text" id="max_year" name="maxyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
             </div>
           </div>
           <div className="Listings-Filter-Row-Element">
-            <label htmlFor="mile" className="Listings-Filter-Element">Mile</label><br />
+            <label htmlFor="mile" className="Listings-Filter-Element">Mileage</label><br />
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Min</h>
-                <input type="text" name="minmile" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Min</div>
+                <input type="text" id="min_miles" name="minmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Max</h>
-                <input type="text" name="maxmile" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Max</div>
+                <input type="text" id="max_miles" name="maxmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
             </div>
           </div>
@@ -131,12 +181,12 @@ class Listings extends React.Component {
             <label htmlFor="price" className="Listings-Filter-Element">Price</label><br />
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Min</h>
-                <input type="text" name="minprice" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Min</div>
+                <input type="text" id="min_price" name="minprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
-                <h className="Listings-Filter-Element">Max</h>
-                <input type="text" name="maxprice" className="Listings-Filter-Element" required /><br />
+                <div className="Listings-Filter-Element Small-Font">Max</div>
+                <input type="text" id="max_price" name="maxprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
               </div>
             </div>
           </div>
@@ -145,14 +195,94 @@ class Listings extends React.Component {
     );
   }
 
-  toggleFilterMenu() {
-    this.setState({ filterMenu: !this.state.filterMenu });
+  getLoadingPlaceholder() {
+    return (
+      <div className="Listings-Placeholder">
+        Loading...
+      </div>
+    );
+  }
+
+  addNoDuplicates(arr, number) {
+    if (number < 0 || number >= this.totalPages || arr.includes(number)) {
+      return;
+    }
+    arr.push(number);
+  }
+
+  getNavContainer() {
+    const pageNumbers = [];
+    let leftButton = (
+      <button className="Listings-Nav-Button Button-Background" onClick={() => this.navigatePage(this.page - 1)}>
+        <ArrowL />
+      </button>
+    );
+    let rightButton = (
+      <button className="Listings-Nav-Button Button-Background" onClick={() => this.navigatePage(this.page + 1)}>
+        <ArrowR />
+      </button>
+    );
+    let elements = [];
+    if (this.page === 0)
+      leftButton = null;
+    if (this.page === this.totalPages - 1)
+      rightButton = null;
+    if (this.totalPages === 0) {
+      leftButton = null;
+      rightButton = null;
+    }
+    else {
+      this.addNoDuplicates(pageNumbers, 0);
+      this.addNoDuplicates(pageNumbers, this.totalPages - 1);
+      const left = this.page - this.pageNumberExtent, right = this.page + this.pageNumberExtent;
+      for (let i = left; i <= right; i++) {
+        this.addNoDuplicates(pageNumbers, i);
+      }
+      pageNumbers.sort((a, b) => a - b);
+      elements = pageNumbers.map(n => <button className={"Listings-Nav-Button Button-Background" + (n === this.page ? " Listings-Nav-Button-Current" : "")} key={n} onClick={() => this.navigatePage(n)}>{n + 1}</button>)
+      if (left > 0) {
+        elements.splice(pageNumbers.indexOf(left), 0, <NavThreeDots key="left" />);
+        pageNumbers.splice(pageNumbers.indexOf(left), 0, left - 1);
+      }
+      if (right < this.totalPages - 1) {
+        elements.splice(pageNumbers.indexOf(right) + 1, 0, <NavThreeDots key="right" />);
+      }
+    }
+    return (
+      <div className="Listings-Nav-Container">
+        {leftButton}
+        <div className="Listings-Nav-Numbers">
+          {elements}
+        </div>
+        {rightButton}
+      </div>
+    );
+  }
+
+  navigatePage(newPage) {
+    if (newPage < 0 || newPage >= this.totalPages)
+      return;
+    
+    this.page = newPage;
+    this.getListings(true);
+  }
+
+  toggleFilterMenu(show) {
+    const element = document.getElementsByClassName("Listings-Filter-Outer")[0];
+    if (show !== true && show !== false)
+      show = element.style.maxHeight;
+    if (show)
+      element.style.maxHeight = "";
+    else
+      element.style.maxHeight = "0px";
   }
 
   render() {
     return (
       <div className="Page">
         <div className="App-Header">Our Inventory</div>
+        <br />
+        <div className="Listings-Description">We have a great selection of cars for you to choose from. It is our pleasure to provide you with the best car for you from our selection.</div>
         <br />
         <div style={{ marginBottom: "40px" }}>
           <SearchBar onEnter={this.onEnter.bind(this)} filterToggle={this.toggleFilterMenu.bind(this)} />
@@ -163,21 +293,19 @@ class Listings extends React.Component {
           }
         </div>
         <div style={{ margin: "auto 20px" }}>
+          {this.getNavContainer()}
           <div className="Listings-Container">
             {
-              this.getListings()
+              (() => {
+                if (this.state.data != null) {
+                  return this.state.data;
+                }
+                return this.getLoadingPlaceholder();
+              })()
             }
           </div>
-          <div className="Listings-Nav-Container">
-            <button className="Listings-Nav-Button">
-              <ArrowL />
-            </button>
-            <div>1 ... 3 4 5 ... 10</div>
-            <button className="Listings-Nav-Button">
-              <ArrowR />
-            </button>
-          </div>
         </div>
+        <div style={{ height: "10em" }} />
       </div>
     );
   }

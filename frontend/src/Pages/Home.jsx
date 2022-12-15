@@ -34,11 +34,11 @@ class Home extends React.Component {
         <br />
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", height: "600px" }}>
           <div className="Home-Image-Row">
-            <button className="Home-Image-Arrow" onClick={() => this.changeImage(-1)}>
+            <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(-1)}>
               <ArrowL />
             </button>
             <img src={this.images[this.state.currentImage]} alt="Car"></img>
-            <button className="Home-Image-Arrow" onClick={() => this.changeImage(1)}>
+            <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(1)}>
               <ArrowR />
             </button>
           </div>
