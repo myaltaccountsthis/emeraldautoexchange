@@ -8,6 +8,19 @@ input, textarea {
   text-align: left;
 }
 
+.Button-Background {
+  background-color: transparent;
+  border-radius: 6px;
+  transition: background-color .1s;
+}
+.Button-Background:hover {
+  background-color: rgba(64, 64, 64, .2);
+  cursor: pointer;
+}
+.Button-Background:active {
+  background-color: rgba(20, 20, 20, .2);
+}
+
 .App-Header {
   font-size: 32px;
 }
@@ -36,7 +49,7 @@ input, textarea {
   flex-direction: column;
   width: 100% !important;
   max-height: 200px;
-  transition: max-height .1s ease-in-out;
+  transition: max-height .1s linear;
 }
 .App-Nav-Main > .App-Nav-Element {
   padding: 0px;
@@ -47,11 +60,11 @@ input, textarea {
   border: none;
   background-color: transparent;
   font: inherit;
-  transition: color .15s;
+  transition: color .1s;
 }
 .App-Nav-Element:hover {
   cursor: pointer;
-  color: cornflowerblue;
+  color: gray;
   
 }
 .App-Nav-Element:active {
