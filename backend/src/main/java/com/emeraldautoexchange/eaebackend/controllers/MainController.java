@@ -33,12 +33,12 @@ public class MainController {
             List<Predicate> predicates = new ArrayList<>();
             for (String col : VehicleRepository.columns) {
                 if(params.containsKey(col + "s")) {
-                    predicates.add(criteriaBuilder.lower(root.get(col + "s")).in(Arrays.asList(params.get(col + "s").toLowerCase().split(","))));
+                    predicates.add(criteriaBuilder.lower(root.get(col)).in(Arrays.asList(params.get(col + "s").toLowerCase().split(","))));
                 }
-                else if(params.containsKey("min_" + col)) {
+                if(params.containsKey("min_" + col)) {
                     predicates.add(criteriaBuilder.greaterThanOrEqualTo(root.get(col), params.get("min_" + col)));
                 }
-                else if(params.containsKey("max_" + col)) {
+                if(params.containsKey("max_" + col)) {
                     predicates.add(criteriaBuilder.lessThanOrEqualTo(root.get(col), params.get("max_" + col)));
                 }
             }
