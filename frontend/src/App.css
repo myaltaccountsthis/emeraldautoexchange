@@ -8,6 +8,10 @@ input, textarea {
   text-align: left;
 }
 
+.hidden {
+  display: none;
+}
+
 .Button-Background {
   background-color: transparent;
   border-radius: 6px;

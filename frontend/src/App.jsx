@@ -9,19 +9,28 @@ import {ReactComponent as Logo} from './emerald.svg';
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    
     let current = window.sessionStorage.getItem("current");
     if (!current)
-      window.sessionStorage.setItem("current", current = "Home");
+    window.sessionStorage.setItem("current", current = "Home");
     this.state = {
       currentTab: current,
       useNavMenu: false
     };
+    try {
+      this.config = require('./config.json');
+    }
+    catch (e) {
+      this.config = require('./config.json.example');
+    }
+    this.backendUrl = this.config.backendUrl;
     const homeComponent = <Home />;
     this.navInfo = {
       "Home": {component: homeComponent},
       "HomeTab": {title: "Home", component: homeComponent},
-      "Listings": {title: "Car Listings", component: <Listings />},
-      "Support": {title: "Contact Us", component: <Contact />}
+      "Listings": {title: "Car Listings", component: <Listings backendUrl={this.backendUrl} />},
+      "Support": {title: "Contact Us", component: <Contact backendUrl={this.backendUrl} />}
     };
   }
 
