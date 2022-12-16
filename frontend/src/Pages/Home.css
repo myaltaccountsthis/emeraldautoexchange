@@ -7,17 +7,47 @@
   margin: 3px;
   transition: background-color .2s;
 }
-.Home-Image-Button-Active {
-  background-color: rgb(220, 220, 220) !important;
-}
-
 .Home-Image-Button:hover {
   background-color: rgb(190, 190, 190);
   cursor: pointer;
 }
+.Home-Image-Button-Active {
+  background-color: rgb(220, 220, 220) !important;
+}
+
+.Animate-Left {
+  position: relative;
+  animation: animate-left .5s;
+}
+@keyframes animate-left {
+  from {
+    left: -20vw;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+.Animate-Right {
+  position: relative;
+  animation: animate-right .5s;
+}
+@keyframes animate-right {
+  from {
+    right: -20vw;
+    opacity: 0;
+  }
+  to {
+    right: 0px;
+    opacity: 1;
+  }
+}
 
 .Home-Image-Row {
   display: flex;
+  overflow: hidden;
   flex-direction: row;
   height: 480px;
   margin: 60px 20px 0px 20px;
@@ -40,7 +70,8 @@
   max-width: 64px;
   padding: 0;
   margin: 0px 10px;
-  flex: 0 2 auto;
+  flex: 0 1 64px;
+  z-index: 1;
 }
 
 .Home-Image-Arrow > svg {

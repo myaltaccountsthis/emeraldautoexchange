@@ -5,11 +5,13 @@ class Contact extends React.Component {
   constructor(props) {
     super(props);
 
+    this.backendUrl = props.backendUrl;
     this.reasons = [ "I want to buy a car", "I want to sell my car", "I want to exchange my car", "Other (tell us in other comments)" ];
   }
 
   onSubmit() {
-
+    const data = new FormData(document.getElementById("Contact-Form"));
+    fetch(this.backendUrl + "/contact", { method: "post", body: data });
     return false;
   }
 
@@ -37,7 +39,7 @@ class Contact extends React.Component {
         <div className="App-Header">Need Help?</div><br />
         <div className="Contact-Form-Container">
           <div className="App-Secondary">Contact Us</div><br />
-          <form className="Contact-Form" onSubmit={this.ons}>
+          <form id="Contact-Form" className="Contact-Form" onSubmit={this.onSubmit}>
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="fname" className="Contact-Form-Element">First Name</label><br />

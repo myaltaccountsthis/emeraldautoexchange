@@ -9,6 +9,7 @@ class Home extends React.Component {
     this.state = {
       currentImage: 0
     };
+    this.imageAnimation = 0;
     this.images = ["emerald.png", "emeraldicon.png", "logo.png"];
     this.handleOnClick = props.handleOnClick;
   }
@@ -21,8 +22,22 @@ class Home extends React.Component {
     this.setState({ currentImage: i});
   }
 
+  setImageIndex(i) {
+    this.imageAnimation = i - this.state.currentImage;
+    this.setImage(i);
+  }
+
   changeImage(delta) {
-    this.setImage((this.state.currentImage + 3 + delta) % 3);
+    this.imageAnimation = delta;
+    this.setImage((this.state.currentImage + this.images.length + delta) % this.images.length);
+  }
+
+  getImageAnimationClass() {
+    if (this.imageAnimation > 0)
+      return "Animate-Right hidden";
+    if (this.imageAnimation < 0)
+      return "Animate-Left hidden";
+    return "hidden";
   }
 
   render() {
@@ -37,14 +52,16 @@ class Home extends React.Component {
             <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(-1)}>
               <ArrowL />
             </button>
-            <img src={this.images[this.state.currentImage]} alt="Car"></img>
+            {
+              this.images.map((image, index) => <img className={this.getImageAnimationClass()} src={image} alt="Car" style={{ display: this.state.currentImage === index ? "block" : "" }} />)
+            }
             <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(1)}>
               <ArrowR />
             </button>
           </div>
           <div>
             {
-              this.images.map((_, index) => <button className={"Home-Image-Button " + (this.state.currentImage === index ? "Home-Image-Button-Active" : "")} key={index} onClick={() => this.setImage(index)} />)
+              this.images.map((_, index) => <button className={"Home-Image-Button " + (this.state.currentImage === index ? "Home-Image-Button-Active" : "")} key={index} onClick={() => this.setImageIndex(index)} />)
             }
           </div>
         </div>
