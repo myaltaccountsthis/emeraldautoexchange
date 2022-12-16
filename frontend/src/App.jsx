@@ -16,7 +16,7 @@ class App extends React.Component {
       currentTab: current,
       useNavMenu: false
     };
-    const homeComponent = <Home />;
+    const homeComponent = <Home handleOnClick={this.handleOnClick.bind(this)} />;
     this.navInfo = {
       "Home": {component: homeComponent},
       "HomeTab": {title: "Home", component: homeComponent},

@@ -19,9 +19,8 @@
 .Home-Image-Row {
   display: flex;
   flex-direction: row;
-  width: 100%;
   height: 480px;
-  margin: 60px 0px 0px 0px;
+  margin: 60px 20px 0px 20px;
   
   max-width: 100%;
   justify-content: space-between;
@@ -63,28 +62,58 @@
   flex-direction: column;
   justify-content: space-evenly;
   column-gap: 0px; /* Column gap should equal x padding */
-  padding: 0px 40px;
 }
 
 .Home-Column {
   flex: 1 1 0;
-  margin: 0px 0px 50px 0px;
-  padding: 30px 0px;
+  padding: 40px 20px;
   border-radius: 10px;
-  background-color: rgb(160, 235, 255);
+  /* background-color: rgb(160, 235, 255); */
+  background-color: rgb(207, 255, 200);
 }
 
 .Home-About-Holder {
-  margin: 0px auto 50px auto;
+  margin: 20px auto 50px auto;
   width: 80%;
-  padding: 30px 0px;
-  border-radius: 10px;
-  background-color: rgb(255, 210, 220);
+  padding: 0px 0px;
+}
+
+.Home-Icon {
+  width: 60%;
+  max-height: 200px;
+  margin: 30px 0px;
+  object-fit: contain;
 }
 
 .Home-Founder-Image {
   object-fit: contain;
   width: 100%;
+}
+
+.Home-Nav-Splitter {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.Home-Nav-Box {
+  flex: 1 1 0;
+  padding: 40px 20px;
+  border-radius: 10px;
+  background-color: rgb(167, 234, 255);
+}
+
+.Home-Nav-Button {
+  padding: 10px 20px;
+  border-radius: 10px;
+  border-color: transparent;
+  background-color: rgb(130, 210, 255);
+}
+
+.Home-Nav-Button:hover {
+  cursor: pointer;
+  background-color: rgb(120, 220, 255);
+  transition: .15s;
 }
 
 @media screen and (min-width: 601px) {
@@ -109,19 +138,21 @@
   
   .Home-Flex-Row {
     flex-direction: row;
+    column-gap: 40px;
+    padding: 0px 0px;
   }
 
   .Home-About-Holder {
     width: 60%;
   }
 
-  .Home-Flex-Row {
-    column-gap: 50px;
-    padding: 0px 50px;
-  }
-
   .Home-Column {
     max-width: 500px;
+  }
+
+  .Home-Nav-Splitter {
+    flex-direction: row;
+    column-gap: 40px;
   }
 
 }

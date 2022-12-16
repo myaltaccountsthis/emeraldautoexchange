@@ -10,6 +10,7 @@ class Home extends React.Component {
       currentImage: 0
     };
     this.images = ["emerald.png", "emeraldicon.png", "logo.png"];
+    this.handleOnClick = props.handleOnClick;
   }
 
   componentDidMount() {
@@ -29,9 +30,8 @@ class Home extends React.Component {
       <div className="Page">
         <div className="App-Header-Row">
           <div className="App-Header">Welcome to Emerald Auto Exchange</div><br />
-          <div className="App-Secondary">Finer Cars for Finer People</div>
+          <div className="App-Secondary">Finer Cars for Finer People</div><br />
         </div>
-        <br />
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", height: "600px" }}>
           <div className="Home-Image-Row">
             <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(-1)}>
@@ -48,8 +48,25 @@ class Home extends React.Component {
             }
           </div>
         </div>
-        <div className="Info-Row">
-          <br />
+        <div className="Info-Row" style={{ backgroundColor: "rgb(140, 210, 255)" }}>
+          <div className="Home-Nav-Splitter">
+            <div className="Home-Nav-Box">
+              <div className="App-Header">Need A Car?</div><br />
+              <img className="Home-Icon" src="listings.png" alt="listings"></img><br />
+              <button className="Home-Nav-Button" onClick={this.handleOnClick("Listings")}>
+                <div className="App-Secondary">Check our our selection!</div>
+              </button>
+            </div>
+            <div className="Home-Nav-Box">
+              <div className="App-Header">Got Questions?</div><br />
+              <img className="Home-Icon" src="contact.png" alt="contact"></img><br />
+              <button className="Home-Nav-Button" onClick={this.handleOnClick("Support")}>
+                <div className="App-Secondary">Contact our support!</div>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="Info-Row" style={{ backgroundColor: "rgb(255, 220, 220)" }}>
           <div className="Home-About-Holder">
             <div className="App-Header">About Us</div>
             <br />
@@ -57,28 +74,27 @@ class Home extends React.Component {
               Emerald Auto Exchange was created to give customers used cars for the price they are worth.
               Since we started the company, we have always strived to keep prices fair for our many cars of various conditions.
               Our wide selection of used cars will ensure that you can find the right car for the right price.
-              <br />
             </div>
           </div>
           <br />
           <div className="Home-Flex-Row">
-            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+            <div className="Home-Column">
               <div className="App-Secondary">Affordable</div>
-              <br />
+              <img className="Home-Icon" src="affordable.png" alt="affordable"></img>
               <div className="Home-About-Text">
                 We offer cars that are affordable, ensuring that everyone can buy the right car.
               </div>
             </div>
-            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+            <div className="Home-Column">
               <div className="App-Secondary">Quality</div>
-              <br />
+              <img className="Home-Icon" src="quality.png" alt="quality"></img>
               <div className="Home-About-Text">
                 Our selection includes the highest quality used cars in the market.
               </div>
             </div>
-            <div className="Home-Column" style={{ backgroundColor: "rgb(200, 255, 150)" }}>
+            <div className="Home-Column">
               <div className="App-Secondary">Easy</div>
-              <br />
+              <img className="Home-Icon" src="easy.png" alt="easy"></img>
               <div className="Home-About-Text">
                 We have the easiest way to search for used cars with simple filtering options.
               </div>
@@ -86,6 +102,7 @@ class Home extends React.Component {
           </div>
           <br />
         </div>
+        {/*
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
           <br />
           <div className="App-Header">The Founders</div>
@@ -134,8 +151,7 @@ class Home extends React.Component {
           </div>
           <br />
         </div>
-        <div className="Info-Row">
-        </div>
+        */}
       </div>
     );
   }
