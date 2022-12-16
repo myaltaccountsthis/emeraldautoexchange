@@ -18,14 +18,15 @@ class App extends React.Component {
       currentTab: current,
       useNavMenu: false
     };
-    const homeComponent = <Home handleOnClick={this.handleOnClick.bind(this)} />;
+    this.backendUrl = "http://localhost:8080";
     try {
       this.config = require('./config.json');
+      this.backendUrl = this.config.backendUrl;
     }
     catch (e) {
-      this.config = require('./config.json.example');
+      console.error("Error: could not find local config file 'config.json'.");
     }
-    this.backendUrl = this.config.backendUrl;
+    const homeComponent = <Home handleOnClick={this.handleOnClick.bind(this)} />;
     this.navInfo = {
       "Home": {component: homeComponent},
       "HomeTab": {title: "Home", component: homeComponent},

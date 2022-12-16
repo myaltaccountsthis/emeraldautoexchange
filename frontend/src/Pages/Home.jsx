@@ -53,7 +53,7 @@ class Home extends React.Component {
               <ArrowL />
             </button>
             {
-              this.images.map((image, index) => <img className={this.getImageAnimationClass()} src={image} alt="Car" style={{ display: this.state.currentImage === index ? "block" : "" }} />)
+              this.images.map((image, index) => <img key={index} className={this.getImageAnimationClass()} src={image} alt="Car" style={{ display: this.state.currentImage === index ? "block" : "" }} />)
             }
             <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(1)}>
               <ArrowR />
