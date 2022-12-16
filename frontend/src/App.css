@@ -96,7 +96,7 @@ input, textarea {
 
 .Info-Row {
   min-height: 200px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .Med-Screen {
@@ -104,7 +104,7 @@ input, textarea {
 }
 
 .App-Secondary {
-  font-size: 28px;
+  font-size: 26px;
 }
 
 @media screen and (min-width: 601px) {
@@ -141,5 +141,8 @@ input, textarea {
   }
   .App-Secondary {
     font-size: 32px;
+  }
+  .Info-Row {
+    padding: 40px;
   }
 }

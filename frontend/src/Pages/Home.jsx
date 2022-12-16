@@ -117,7 +117,6 @@ class Home extends React.Component {
               </div>
             </div>
           </div>
-          <br />
         </div>
         {/*
         <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
