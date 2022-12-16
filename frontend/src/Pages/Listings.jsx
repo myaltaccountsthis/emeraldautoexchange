@@ -15,6 +15,7 @@ class Listings extends React.Component {
       selectedMake: "",
       data: null
     };
+    this.backendUrl = props.backendUrl;
     this.models = {
       "": [ "" ],
       "Chevrolet": [ "", "Equinox", "Malibu", "Silverado", "Suburban", "Tahoe" ],
@@ -55,7 +56,7 @@ class Listings extends React.Component {
     
     // query for this.currentQuery to compare
     // placeholder for now
-    let query = "http://localhost:8080/inventory?query=" + this.search + "&page=" + (this.page + 1) + "&count=" + this.itemsPerPage;
+    let query = `${this.backendUrl}/inventory?query=${this.search}&page=${(this.page + 1)}&count=${this.itemsPerPage}`;
     this.updateFilter();
     if (this.filter.length > 0)
       query += "&" + this.filter;
@@ -64,7 +65,6 @@ class Listings extends React.Component {
       return;
 
     this.currentQuery = query;
-    console.log(query);
     if (!keepNav)
       this.totalPages = 0;
     this.setState({ data: null });
