@@ -1,19 +1,15 @@
 package com.emeraldautoexchange.eaebackend.controllers;
 
-import com.emeraldautoexchange.eaebackend.Vehicle;
-import com.emeraldautoexchange.eaebackend.VehicleRepository;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.math.NumberUtils;
+import com.emeraldautoexchange.eaebackend.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Predicate;
-import javax.persistence.criteria.Root;
 import java.util.*;
+import java.util.List;
 import java.util.stream.Collectors;
 
 @RestController
@@ -21,11 +17,18 @@ public class MainController {
     @Autowired
     VehicleRepository repo;
 
+    @Autowired
+    MakeRepository makes;
+
+    @Autowired
+    BuildRepository builds;
+
     @GetMapping("/add/{num1}/{num2}")
     int add(@PathVariable int num1, @PathVariable int num2) {
         return num1 + num2;
     }
 
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
     @GetMapping("/inventory")
     Map<String, Object> getInventory(@RequestParam Map<String, String> parameters) {
         final Map<String, String> params = parameters.entrySet().stream().collect(Collectors.toMap(e -> e.getKey().toLowerCase(), Map.Entry::getValue));
@@ -112,4 +115,23 @@ public class MainController {
         return data;
     }
 
+    @GetMapping("/get-makes")
+    List<Make> getMakes() {
+        return makes.findAll(Sort.by("id"));
+    }
+
+    @GetMapping("/get-builds")
+    List<Build> getBuilds() {
+        return builds.findAll(Sort.by("id"));
+    }
+
+    /*
+    @GetMapping("get-make-models")
+
+
+    @PostMapping(name = "/contact", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    void contact() {
+
+    }
+     */
 }

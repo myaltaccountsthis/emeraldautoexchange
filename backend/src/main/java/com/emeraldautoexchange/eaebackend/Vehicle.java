@@ -1,7 +1,5 @@
 package com.emeraldautoexchange.eaebackend;
 
-import org.hibernate.annotations.Formula;
-
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
