@@ -62,7 +62,7 @@ class Contact extends React.Component {
             </div><br />
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
-                <label htmlFor="reason" className="Contact-Form-Element">Reason</label><br />
+                <label htmlFor="reason" className="Contact-Form-Element">How can we help?</label><br />
                 <select name="reason" className="Contact-Form-Element" required>
                   {
                     this.reasons.map(reason => <option className="Contact-Form-Element" key={reason} value={reason}>{reason}</option>)
@@ -71,7 +71,7 @@ class Contact extends React.Component {
               </div>
             </div><br />
             <div className="Contact-Form-Row-Element">
-              <label htmlFor="comments" className="Contact-Form-Element">Other comments</label><br />
+              <label htmlFor="comments" className="Contact-Form-Element">Questions or Comments</label><br />
               <textarea type="text" name="comments" className="Contact-Form-Element" maxLength="1000" placeholder="Anything you want us to know?" onInput={this.resizeTextArea} /><br />
             </div><br />
             <button type="submit" className="Contact-Submit" style={{ width: "80%", margin: "auto" }}>Submit</button>

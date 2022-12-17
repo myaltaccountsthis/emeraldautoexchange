@@ -91,7 +91,7 @@ class Listings extends React.Component {
         );
       }
       else {
-        data = matches.map(item => <ListingsElement key={item.key} item={item} />);
+        data = matches.sort((a, b) => a.id - b.id).map(item => <ListingsElement key={item.key} item={item} />);
         success = true;
       }
     }

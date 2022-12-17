@@ -3,10 +3,15 @@ function ListingsElement(props) {
   return (
     <div className="Listings-Element">
       <div className="Listings-Element-Container">
-        <b>{[item.year, item.make, item.model].join(" ")}</b>
-        <img className="Listings-Element-Image" src={item.imageUrl} alt={item.imageUrl} />
-        <div>{item.miles.toLocaleString()} miles</div>
-        <div>Starting Price: ${item.price.toLocaleString()}</div>
+        <div>
+          <b>{[item.year, item.make, item.model].join(" ")}</b>
+          <br />
+          <img className="Listings-Element-Image" src={item.imageUrl} alt={item.imageUrl} />
+        </div>
+        <div>
+          <div style={{ justifySelf: "end" }}>{item.miles.toLocaleString()} miles</div>
+          <div style={{ justifySelf: "end" }}>Starting Price: ${item.price.toLocaleString()}</div>
+        </div>
       </div>
     </div>
   );

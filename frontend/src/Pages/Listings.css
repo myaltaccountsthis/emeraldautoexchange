@@ -55,15 +55,14 @@ html {
   display: flex;
   margin: auto;
   box-sizing: border-box;
-  max-width: 1200px;
+  max-width: 90vw;
   text-align: center;
   border-radius: 15px;
   flex-direction: column;
   flex-wrap: wrap;
   padding: 12px;
   background-color: rgb(192, 248, 215);
-  column-gap: 8px;
-  row-gap: 8px;
+  gap: 8px;
 }
 .Listings-None {
   flex: auto;
@@ -86,9 +85,9 @@ html {
   box-sizing: border-box;
   border-radius: 10px;
   background-color: white;
-  padding: 8px;
+  padding: 12px;
   width: 100%;
-  flex: 1 0 auto;
+  /* flex: 1 0 auto; */
 }
 .Listings-Element * {
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -96,16 +95,19 @@ html {
 }
 
 .Listings-Element-Image {
-  width: 80%;
+  max-width: 80%;
   max-height: 20vh;
   margin: 8px auto 12px;
   padding: 0px;
   border-radius: 12px;
+  object-fit: contain;
 }
 
 .Listings-Element-Container {
   display: flex;
+  height: 100%;
   flex-direction: column;
+  justify-content: space-between;
 }
 
 .Listings-Element-Container b {
@@ -252,6 +254,7 @@ input.Listings-Filter-Element:focus {
   .Listings-Container {
     flex-direction: row;
     padding: 20px;
+    gap: 16px;
   }
 
   .Listings-None {
@@ -259,8 +262,7 @@ input.Listings-Filter-Element:focus {
   }
 
   .Listings-Element {
-    width: 30%;
-    margin: 8px;
+    width: calc(50% - 8px);
   }
 
   .Listings-Filter-Menu {
@@ -281,5 +283,17 @@ input.Listings-Filter-Element:focus {
   
   .Listings-Filter-Outer {
     max-height: 320px;
+  }
+}
+
+@media screen and (min-width: 1001px) {
+  .Listings-Element {
+    width: calc(33.3333% - 32px / 3);
+  }
+}
+
+@media screen and (min-width: 2001px) {
+  .Listings-Element {
+    width: calc(25% - 12px);
   }
 }

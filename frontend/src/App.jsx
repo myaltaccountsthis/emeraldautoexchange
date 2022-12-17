@@ -10,7 +10,6 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    
     let current = window.sessionStorage.getItem("current");
     if (!current)
     window.sessionStorage.setItem("current", current = "Home");
@@ -33,14 +32,25 @@ class App extends React.Component {
       "Listings": {title: "Car Listings", component: <Listings backendUrl={this.backendUrl} />},
       "Support": {title: "Contact Us", component: <Contact backendUrl={this.backendUrl} />}
     };
+    window.onscroll = this.updateNavBar;
   }
 
   componentDidUpdate() {
     window.sessionStorage.setItem("current", this.state.currentTab);
   }
 
+  updateNavBar() {
+    const navBar = document.getElementById("navbar");
+    if (window.scrollY >= navBar.offsetTop) {
+      navBar.classList.add("sticky");
+    }
+    else {
+      navBar.classList.remove("sticky");
+    }
+  }
+
   handleOnClick(name) {
-    return () => this.setState({currentTab: name});
+    return () => this.setState({ currentTab: name }, () => window.scroll(0, 0));
   }
 
   toggleMenu() {
@@ -55,7 +65,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <header>
-          <div className="App-Nav">
+          <div className="App-Nav" id="navbar">
             <NavButton content={<Logo className="App-Nav-Button-svg" />} onClick={this.handleOnClick("Home")} className="Med-Screen" />
             <NavButton className="App-Nav-Menu-Button" content={<img src="hamburgerbutton.png" alt="Menu" style={{ height: "40px" }} />} onClick={this.toggleMenu} />
             <div className="Med-Screen" style={{ flexGrow: 2 }} />
