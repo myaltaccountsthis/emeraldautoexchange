@@ -39,7 +39,7 @@ class Contact extends React.Component {
         <div className="App-Header">Need Help?</div><br />
         <div className="Contact-Form-Container">
           <div className="App-Secondary">Contact Us</div><br />
-          <form id="Contact-Form" className="Contact-Form" onSubmit={this.onSubmit}>
+          <form id="Contact-Form" className="Contact-Form" onSubmit={this.onSubmit.bind(this)}>
             <div className="Contact-Form-Row">
               <div className="Contact-Form-Row-Element">
                 <label htmlFor="fname" className="Contact-Form-Element">First Name</label><br />

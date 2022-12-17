@@ -1,7 +1,7 @@
 .Home-Image-Button {
   border-radius: 50%;
   border: 0px;
-  background-color: rgb(150, 150, 150);
+  background-color: rgb(220, 220, 220);
   height: 15px;
   width: 15px;
   margin: 3px;
@@ -12,7 +12,7 @@
   cursor: pointer;
 }
 .Home-Image-Button-Active {
-  background-color: rgb(220, 220, 220) !important;
+  background-color: rgb(150, 150, 150) !important;
 }
 
 .Animate-Left {
@@ -49,8 +49,7 @@
   display: flex;
   overflow: hidden;
   flex-direction: row;
-  height: 480px;
-  margin: 60px 0px 0px 0px;
+  max-height: 600px;
   
   max-width: 100%;
   justify-content: space-between;
@@ -188,7 +187,7 @@
   }
 
   .Home-Image-Row {
-    margin: 60px 20px 0px 20px;
+    margin: 0px 20px;
   }
 
 }

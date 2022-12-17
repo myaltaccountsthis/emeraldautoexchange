@@ -218,24 +218,16 @@ class Listings extends React.Component {
 
   getNavContainer() {
     const pageNumbers = [];
-    let leftButton = (
-      <button className="Listings-Nav-Button Button-Background" onClick={() => this.navigatePage(this.page - 1)}>
-        <ArrowL />
-      </button>
-    );
-    let rightButton = (
-      <button className="Listings-Nav-Button Button-Background" onClick={() => this.navigatePage(this.page + 1)}>
-        <ArrowR />
-      </button>
-    );
+    let leftButton = true;
+    let rightButton = true;
     let elements = [];
     if (this.page === 0)
-      leftButton = null;
+      leftButton = false;
     if (this.page === this.totalPages - 1)
-      rightButton = null;
+      rightButton = false;
     if (this.totalPages === 0) {
-      leftButton = null;
-      rightButton = null;
+      leftButton = false;
+      rightButton = false;
     }
     else {
       this.addNoDuplicates(pageNumbers, 0);
@@ -245,7 +237,7 @@ class Listings extends React.Component {
         this.addNoDuplicates(pageNumbers, i);
       }
       pageNumbers.sort((a, b) => a - b);
-      elements = pageNumbers.map(n => <button className={"Listings-Nav-Button Button-Background" + (n === this.page ? " Listings-Nav-Button-Current" : "")} key={n} onClick={() => this.navigatePage(n)}>{n + 1}</button>)
+      elements = pageNumbers.map(n => <button className={"Listings-Nav-Button Button-Background" + (n === this.page ? " Listings-Nav-Button-Current" : "")} key={n} onClick={() => this.navigatePage(n)}>{n + 1}</button>);
       if (left > 0) {
         elements.splice(pageNumbers.indexOf(left), 0, <NavThreeDots key="left" />);
         pageNumbers.splice(pageNumbers.indexOf(left), 0, left - 1);
@@ -256,11 +248,15 @@ class Listings extends React.Component {
     }
     return (
       <div className="Listings-Nav-Container">
-        {leftButton}
+        <button className={"Listings-Nav-Button Button-Background" + (leftButton ? " visible" : " invisible")} onClick={() => this.navigatePage(this.page - 1)}>
+          <ArrowL />
+        </button>
         <div className="Listings-Nav-Numbers">
           {elements}
         </div>
-        {rightButton}
+        <button className={"Listings-Nav-Button Button-Background" + (rightButton ? " visible" : " invisible")} onClick={() => this.navigatePage(this.page + 1)}>
+          <ArrowR />
+        </button>
       </div>
     );
   }

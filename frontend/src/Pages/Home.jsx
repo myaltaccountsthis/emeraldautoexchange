@@ -10,7 +10,7 @@ class Home extends React.Component {
       currentImage: 0
     };
     this.imageAnimation = 0;
-    this.images = ["emerald.png", "emeraldicon.png", "logo.png"];
+    this.images = ["emerald.png", "ad1.png", "ad-2.png"];
     this.handleOnClick = props.handleOnClick;
   }
 
@@ -47,7 +47,7 @@ class Home extends React.Component {
           <div className="App-Header">Welcome to Emerald Auto Exchange</div><br />
           <div className="App-Secondary">Finer Cars for Finer People</div><br />
         </div>
-        <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)", height: "600px" }}>
+        <div className="Info-Row" style={{ backgroundColor: "rgb(192, 248, 215)" }}>
           <div className="Home-Image-Row">
             <button className="Home-Image-Arrow Button-Background" onClick={() => this.changeImage(-1)}>
               <ArrowL />
