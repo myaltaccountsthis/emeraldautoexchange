@@ -13,7 +13,8 @@ class Listings extends React.Component {
     this.state = {
       focused: false,
       selectedMake: "",
-      data: null
+      data: null,
+      success: false
     };
     this.backendUrl = props.backendUrl;
     this.models = {
@@ -61,14 +62,15 @@ class Listings extends React.Component {
     if (this.filter.length > 0)
       query += "&" + this.filter;
     query = encodeURI(query);
-    if (query === this.currentQuery)
+    if (query === this.currentQuery && this.state.success)
       return;
 
     this.currentQuery = query;
     if (!keepNav)
       this.totalPages = 0;
-    this.setState({ data: null });
+    this.setState({ data: null, success: false });
     
+    let success = false;
     let data;
     try {
       const response = JSON.parse(await ((await fetch(query).catch("Failed to load data")).text()));
@@ -89,6 +91,7 @@ class Listings extends React.Component {
       }
       else {
         data = matches.map(item => <ListingsElement key={item.key} item={item} />);
+        success = true;
       }
     }
     catch (e) {
@@ -96,12 +99,15 @@ class Listings extends React.Component {
     }
     
     if (query === this.currentQuery)
-      this.setState({ data: data });
+      this.setState({ data: data, success: success });
+  }
+
+  updateSearch(event) {
+    this.search = event.target.value.toLowerCase();
   }
 
   onEnter(event) {
     if (event.key === "Enter") {
-      this.search = event.target.value.toLowerCase();
       this.newSearch();
     }
   }
@@ -112,8 +118,7 @@ class Listings extends React.Component {
   }
 
   updateModel(event) {
-    this.newSearch();
-    this.setState({ selectedMake: event.target.value });
+    this.setState({ selectedMake: event.target.value }, () => this.newSearch());
   }
 
   onFilterInput(event) {
@@ -156,11 +161,11 @@ class Listings extends React.Component {
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Min</div>
-                <input type="text" id="min_year" name="minyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="min_year" name="minyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Max</div>
-                <input type="text" id="max_year" name="maxyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="max_year" name="maxyear" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
             </div>
           </div>
@@ -169,11 +174,11 @@ class Listings extends React.Component {
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Min</div>
-                <input type="text" id="min_miles" name="minmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="min_miles" name="minmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Max</div>
-                <input type="text" id="max_miles" name="maxmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="max_miles" name="maxmile" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
             </div>
           </div>
@@ -182,11 +187,11 @@ class Listings extends React.Component {
             <div className="Listings-Filter-Compare-Row">
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Min</div>
-                <input type="text" id="min_price" name="minprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="min_price" name="minprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
               <div className="Listings-Filter-Set">
                 <div className="Listings-Filter-Element Small-Font">Max</div>
-                <input type="text" id="max_price" name="maxprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onChange={this.newSearch.bind(this)} required /><br />
+                <input type="text" id="max_price" name="maxprice" className="Listings-Filter-Element" maxLength="8" onInput={this.onFilterInput} onBlur={this.newSearch.bind(this)} onKeyUp={this.onEnter.bind(this)} required /><br />
               </div>
             </div>
           </div>
@@ -285,7 +290,7 @@ class Listings extends React.Component {
         <div className="Listings-Description">We have a great selection of cars for you to choose from. It is our pleasure to provide you with the best car for you from our selection.</div>
         <br />
         <div style={{ marginBottom: "40px" }}>
-          <SearchBar onEnter={this.onEnter.bind(this)} filterToggle={this.toggleFilterMenu.bind(this)} />
+          <SearchBar onEnter={this.onEnter.bind(this)} newSearch={this.newSearch.bind(this)} updateSearch={this.updateSearch.bind(this)} filterToggle={this.toggleFilterMenu.bind(this)} />
         </div>
         <div className="Listings-Filter-Outer">
           {

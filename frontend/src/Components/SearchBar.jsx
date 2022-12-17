@@ -7,6 +7,8 @@ class SearchBar extends React.Component {
     super(props);
     this.state = { focused: false };
     this.onEnter = props.onEnter;
+    this.newSearch = props.newSearch;
+    this.updateSearch = props.updateSearch;
     this.filterToggle = props.filterToggle;
   }
 
@@ -21,10 +23,10 @@ class SearchBar extends React.Component {
   render() {
     return (
       <div className={this.getFocusedName("Search-Bar")}>
-        <button className="Search-Button Button-Background" onClick={this.onEnter}>
+        <button className="Search-Button Button-Background" onClick={this.newSearch}>
           <SearchIcon width="32px" height="32px" />
         </button>
-        <input className={this.getFocusedName("Search-Text")} type="text" onFocus={this.onFocusEvent(true)} onBlur={this.onFocusEvent(false)} onKeyUp={this.onEnter} />
+        <input className={this.getFocusedName("Search-Text")} type="text" onFocus={this.onFocusEvent(true)} onChange={this.updateSearch} onBlur={this.onFocusEvent(false)} onKeyUp={this.onEnter} />
         <button className="Listings-Filter-Button Button-Background" onClick={this.filterToggle}>
           <FilterIcon padding="0px" />
         </button>
