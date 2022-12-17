@@ -64,7 +64,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header>
           <div className="App-Nav" id="navbar">
             <NavButton content={<Logo className="App-Nav-Button-svg" />} onClick={this.handleOnClick("Home")} className="Med-Screen" />
             <NavButton className="App-Nav-Menu-Button" content={<img src="hamburgerbutton.png" alt="Menu" style={{ height: "40px" }} />} onClick={this.toggleMenu} />
@@ -84,8 +83,7 @@ class App extends React.Component {
             </div>
             <div className="Med-Screen" style={{ flexGrow: 1, maxWidth: "50px" }} />
           </div>
-        </header>
-        <div style={{height: "30px"}} />
+        <div style={{ height: "30px", paddingTop: "100px" }} />
         {this.navInfo[this.state.currentTab].component}
       </div>
     );

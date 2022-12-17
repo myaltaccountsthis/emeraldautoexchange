@@ -12,14 +12,6 @@ input, textarea {
   display: none;
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 60px;
-  z-index: 2;
-}
-
 .Button-Background {
   background-color: transparent;
   border-radius: 6px;
@@ -44,6 +36,7 @@ input, textarea {
 
 .App-Nav {
   display: flex;
+  position: fixed;
   background-color:rgb(225, 240, 218);
   width: 100%;
   padding: 0px 10px;
@@ -54,6 +47,7 @@ input, textarea {
   flex-wrap: wrap;
   align-items: center;
   overflow: hidden;
+  z-index: 2;
 }
 
 .App-Nav-Main {
