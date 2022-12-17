@@ -80,6 +80,7 @@ class Listings extends React.Component {
       matches = matches.map((item, index) => {
         item.name = [item.year, item.make, item.model].join(" ");
         item.key = [item.name, item.miles, index].join(" ");
+        item.imageUrl = `cars/${item.make}_${item.model}.jpg`.toLowerCase();
         return item;
       });
 
