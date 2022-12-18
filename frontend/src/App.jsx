@@ -83,7 +83,7 @@ class App extends React.Component {
             </div>
             <div className="Med-Screen" style={{ flexGrow: 1, maxWidth: "50px" }} />
           </div>
-        <div style={{ height: "30px", paddingTop: "100px" }} />
+        <div className="App-Nav-Page-Divider"  />
         {this.navInfo[this.state.currentTab].component}
       </div>
     );

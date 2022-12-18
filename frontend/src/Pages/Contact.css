@@ -45,7 +45,7 @@ textarea.Contact-Form-Element {
 
 .Contact-Form-Container {
   width: 80%;
-  max-width: 800px;
+  max-width: calc(600px + 20vw);
   margin: auto;
   padding: 30px 20px;
   background-color: rgb(192, 248, 215);

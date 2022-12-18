@@ -292,8 +292,10 @@ input.Listings-Filter-Element:focus {
   }
 }
 
+/* 
 @media screen and (min-width: 2001px) {
   .Listings-Element {
     width: calc(25% - 12px);
   }
 }
+*/
