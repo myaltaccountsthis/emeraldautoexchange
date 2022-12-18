@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class CustomErrorController implements ErrorController {
-    @GetMapping(value = "/error", produces = "application/json")
+    @GetMapping(value = "/error", produces = "text/plain")
     @ResponseBody
     String error() {
-        return "Error 404";
+        return "Error 404: Not Found";
     }
 }

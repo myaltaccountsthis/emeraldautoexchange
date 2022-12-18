@@ -23,13 +23,11 @@ public class MainController {
     @Autowired
     BuildRepository builds;
 
-    @GetMapping("/add/{num1}/{num2}")
-    int add(@PathVariable int num1, @PathVariable int num2) {
-        return num1 + num2;
-    }
+    @Autowired
+    ContactFormRepository forms;
 
-    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
-    @GetMapping("/inventory")
+    @CrossOrigin(origins = {"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @GetMapping(value = "/inventory", produces = MediaType.APPLICATION_JSON_VALUE)
     Map<String, Object> getInventory(@RequestParam Map<String, String> parameters) {
         final Map<String, String> params = parameters.entrySet().stream().collect(Collectors.toMap(e -> e.getKey().toLowerCase(), Map.Entry::getValue));
         Specification<Vehicle> spec = ((root, criteriaQuery, criteriaBuilder) -> {
@@ -115,12 +113,14 @@ public class MainController {
         return data;
     }
 
-    @GetMapping("/get-makes")
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @GetMapping(value = "/get-makes", produces = MediaType.APPLICATION_JSON_VALUE)
     List<Make> getMakes() {
         return makes.findAll(Sort.by("id"));
     }
 
-    @GetMapping("/get-builds")
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @GetMapping(value = "/get-builds", produces = MediaType.APPLICATION_JSON_VALUE)
     List<Build> getBuilds() {
         return builds.findAll(Sort.by("id"));
     }
@@ -128,10 +128,17 @@ public class MainController {
     /*
     @GetMapping("get-make-models")
 
-
-    @PostMapping(name = "/contact", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    void contact() {
-
-    }
      */
+
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @PostMapping(value = "/contact", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    void contact(ContactForm form) {
+        forms.saveAndFlush(form);
+    }
+
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @GetMapping(value = "/management/get-form-listings", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ContactForm> getFormListings() {
+        return forms.findAll();
+    }
 }
