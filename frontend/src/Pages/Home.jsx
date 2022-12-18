@@ -10,7 +10,7 @@ class Home extends React.Component {
       currentImage: 0
     };
     this.imageAnimation = 0;
-    this.images = ["emerald.png", "ad1.png", "ad-2.png"];
+    this.images = ["ad1.png", "ad2.png", "ad3.png"];
     this.handleOnClick = props.handleOnClick;
   }
 
@@ -168,6 +168,12 @@ class Home extends React.Component {
           <br />
         </div>
         */}
+        <div className="Info-Row">
+          <div className="App-Header">Event Info</div><br />
+          <div>435 - Web Design Team - Used Car Lot</div>
+          <div>Sahasrad Chippa, Adam Zhu, Ellison Zhu, Aarush Singh</div>
+          <div>Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023</div>
+        </div>
       </div>
     );
   }

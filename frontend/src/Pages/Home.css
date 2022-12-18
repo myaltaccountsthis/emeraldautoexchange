@@ -49,18 +49,17 @@
   display: flex;
   overflow: hidden;
   flex-direction: row;
-  max-height: 600px;
   
   max-width: 100%;
   justify-content: space-between;
 }
 
 .Home-Image-Row > img {
-  object-fit: contain;
-  flex: 1 1 auto;
-  min-width: 0px;
-  max-height: 100%;
+  max-width: 60%;
+  max-height: 40vh;
   margin: 50px 20px;
+  border-radius: 16px;
+  object-fit: contain;
 }
 
 .Home-Image-Arrow {
@@ -133,7 +132,7 @@
   flex: 1 1 0;
   padding: 40px 20px;
   border-radius: 10px;
-  background-color: rgb(167, 234, 255);
+  background-color: rgb(195, 241, 255);
 }
 
 .Home-Nav-Button {
