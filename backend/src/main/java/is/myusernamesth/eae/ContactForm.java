@@ -1,4 +1,4 @@
-package com.emeraldautoexchange.eaebackend;
+package is.myusernamesth.eae;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

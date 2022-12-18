@@ -1,4 +1,4 @@
-package com.emeraldautoexchange.eaebackend;
+package is.myusernamesth.eae;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

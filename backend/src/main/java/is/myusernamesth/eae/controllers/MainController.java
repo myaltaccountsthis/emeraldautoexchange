@@ -1,6 +1,6 @@
-package com.emeraldautoexchange.eaebackend.controllers;
+package is.myusernamesth.eae.controllers;
 
-import com.emeraldautoexchange.eaebackend.*;
+import is.myusernamesth.eae.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;

@@ -1,4 +1,4 @@
-package com.emeraldautoexchange.eaebackend;
+package is.myusernamesth.eae;
 
 public class ReasonTypes {
     private static final String buy = "I want to buy a car";
