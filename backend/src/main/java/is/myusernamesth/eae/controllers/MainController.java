@@ -4,6 +4,7 @@ import is.myusernamesth.eae.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.*;
 import org.springframework.data.jpa.domain.Specification;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
@@ -131,14 +132,20 @@ public class MainController {
      */
 
     @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
-    @PostMapping(value = "/contact", consumes = MediaType.MULTIPART_FORM_DATA_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/contact", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     void contact(ContactForm form) {
         forms.saveAndFlush(form);
     }
 
     @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
-    @GetMapping(value = "/management/get-form-listings", produces = MediaType.APPLICATION_JSON_VALUE)
-    List<ContactForm> getFormListings() {
+    @GetMapping(value = "/management/get-contact-forms", produces = MediaType.APPLICATION_JSON_VALUE)
+    List<ContactForm> getContactForms() {
         return forms.findAll();
+    }
+
+    @CrossOrigin(origins={"https://myaltaccountsthis.github.io/","https://eae.myusernamesth.is/", "http://localhost:3000/"})
+    @PostMapping(value = "/management/reset-contact-forms")
+    void resetContactForms() {
+        forms.wipe();
     }
 }
