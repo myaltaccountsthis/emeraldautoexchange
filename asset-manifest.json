@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/emeraldautoexchange/static/css/main.a08af739.css",
-    "main.js": "/emeraldautoexchange/static/js/main.e2a3e9a7.js",
-    "static/media/emerald.svg": "/emeraldautoexchange/static/media/emerald.92380c7db640254c5126818bd08aef6c.svg",
-    "static/media/arrowL.svg": "/emeraldautoexchange/static/media/arrowL.38f1a4068e563225ff31a22031b2d7d5.svg",
-    "static/media/arrowR.svg": "/emeraldautoexchange/static/media/arrowR.c54ff4353fc93d00c5e51f1e3361c1fc.svg",
-    "static/media/magnifying-glass.svg": "/emeraldautoexchange/static/media/magnifying-glass.65ecd66a2fa1202d1b27e1092513725d.svg",
-    "index.html": "/emeraldautoexchange/index.html",
-    "static/media/filter.svg": "/emeraldautoexchange/static/media/filter.5e9b18e618a5d30101dfcab512f82ca5.svg",
-    "main.a08af739.css.map": "/emeraldautoexchange/static/css/main.a08af739.css.map",
-    "main.e2a3e9a7.js.map": "/emeraldautoexchange/static/js/main.e2a3e9a7.js.map"
+    "main.css": "/static/css/main.bbbd6eff.css",
+    "main.js": "/static/js/main.258d3adf.js",
+    "static/media/emerald.svg": "/static/media/emerald.92380c7db640254c5126818bd08aef6c.svg",
+    "static/media/arrowL.svg": "/static/media/arrowL.38f1a4068e563225ff31a22031b2d7d5.svg",
+    "static/media/arrowR.svg": "/static/media/arrowR.c54ff4353fc93d00c5e51f1e3361c1fc.svg",
+    "static/media/magnifying-glass.svg": "/static/media/magnifying-glass.65ecd66a2fa1202d1b27e1092513725d.svg",
+    "static/media/filter.svg": "/static/media/filter.5e9b18e618a5d30101dfcab512f82ca5.svg",
+    "index.html": "/index.html",
+    "main.bbbd6eff.css.map": "/static/css/main.bbbd6eff.css.map",
+    "main.258d3adf.js.map": "/static/js/main.258d3adf.js.map"
   },
   "entrypoints": [
-    "static/css/main.a08af739.css",
-    "static/js/main.e2a3e9a7.js"
+    "static/css/main.bbbd6eff.css",
+    "static/js/main.258d3adf.js"
   ]
 }
