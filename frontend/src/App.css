@@ -109,6 +109,11 @@ input, textarea {
   font-size: 26px;
 }
 
+.App-Nav-Page-Divider {
+  height: 30px;
+  padding-top: 210px;
+}
+
 @media screen and (min-width: 601px) {
   .App-Nav-Main {
     display: flex;
@@ -135,6 +140,10 @@ input, textarea {
 
   .Med-Screen {
     display: initial;
+  }
+
+  .App-Nav-Page-Divider {
+    padding-top: 100px;
   }
 }
 @media screen and (min-width: 721px) {

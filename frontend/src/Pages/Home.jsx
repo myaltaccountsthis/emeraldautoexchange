@@ -10,7 +10,7 @@ class Home extends React.Component {
       currentImage: 0
     };
     this.imageAnimation = 0;
-    this.images = ["ad1.png", "ad2.png", "ad3.png"];
+    this.images = ["car1.png", "car2.png", "car3.png"];
     this.handleOnClick = props.handleOnClick;
   }
 
