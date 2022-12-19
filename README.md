@@ -1,8 +1,9 @@
 ## Event Info
 
 435 - Web Design Team - Used Car Lot\
-Sahasrad Chippa, Adam Zhu, Ellison Zhu, Aarush Singh
-Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023\
+**TEAM ID:** 435-S-14231, **TEAM CAPTAIN ID:** 00098221\
+Sahasrad Chippa, Adam Zhu, Ellison Zhu, Aarush Singh\
+Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023
 
 # FINAL WEBSITE LINK
 https://eae.myusernamesth.is
