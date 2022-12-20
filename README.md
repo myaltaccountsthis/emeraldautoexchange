@@ -3,7 +3,7 @@
 435 - Web Design Team - Used Car Lot\
 **TEAM ID:** 435-S-14231, **TEAM CAPTAIN ID:** 00098221\
 Sahasrad Chippa, Adam Zhu, Ellison Zhu, Aarush Singh\
-Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023
+Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023\
 Advisor: David Loosli, looslid@friscoisd.org
 
 # FINAL WEBSITE LINK
