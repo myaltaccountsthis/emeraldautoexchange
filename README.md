@@ -4,6 +4,7 @@
 **TEAM ID:** 435-S-14231, **TEAM CAPTAIN ID:** 00098221\
 Sahasrad Chippa, Adam Zhu, Ellison Zhu, Aarush Singh\
 Chapter 02-1423 - Lebanon Trail HS, Frisco, TX - 2023
+Advisor: David Loosli, looslid@friscoisd.org
 
 # FINAL WEBSITE LINK
 https://eae.myusernamesth.is
@@ -23,6 +24,6 @@ Locally: \
 Open CMD in the code folder and run `npm start`\
 The website should open, if not go to [localhost:3000](http://localhost:3000)
 
-Deploy to Github Pages:\
+Deploy to Github Pages (deprecated):\
 Set "homepage": "https://myaltaccountsthis.github.io/emeraldautoexchange" in `package.json`\
 Run `npm run deploy`
